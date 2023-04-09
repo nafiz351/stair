@@ -1,0 +1,65 @@
+<svg id="spindle_rectangles" data-name="spindle rectangles" xmlns="http://www.w3.org/2000/svg" width="3542" height="3750" viewBox="0 0 3542 3750">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: transparent;
+      }
+
+      .cls-2 {
+        fill: transparent;
+      }
+
+      .cls-3 {
+        fill: transparent;
+      }
+
+      .cls-4 {
+        fill: transparent;
+      }
+
+      .cls-5 {
+        fill: transparent;
+      }
+    </style>
+  </defs>
+  <rect data-name="glass"         data-value="GLASS"         data-part="GLASS"  class="ssitems cls-1" x="24" y="1804" width="3485" height="1262"/>
+  <rect data-name="handrail"  data-value="HANDRAIL"  data-part="HANDRAIL" class="ssitems cls-2" x="18" y="1479" width="3497" height="793"/>
+  <rect data-name="footrail"      data-value="FOOTRAIL"      data-part="FOOTRAIL" class="ssitems cls-3" x="23" y="2497" width="3497" height="793"/>
+  
+  <rect data-part="SPINDLE" data-value="1"  data-name="spindle1" class="ssitems cls-4" x="46" y="1784" width="80" height="1335"/>
+  <rect data-part="SPINDLE" data-value="2"  data-name="spindle2" class="ssitems cls-4" x="181" y="1784" width="80" height="1309"/>
+  <rect data-part="SPINDLE" data-value="3"  data-name="spindle3" class="ssitems cls-4" x="340" y="1784" width="80" height="1284"/>
+  <rect data-part="SPINDLE" data-value="4"  data-name="spindle4" class="ssitems cls-4" x="475" y="1784" width="80" height="1259"/>
+  <rect data-part="SPINDLE" data-value="5"  data-name="spindle5" class="ssitems cls-4" x="610" y="1784" width="80" height="1235"/>
+  <rect data-part="SPINDLE" data-value="6"  data-name="spindle6" class="ssitems cls-4" x="724" y="1784" width="80" height="1212"/>
+  <rect data-part="SPINDLE" data-value="7"  data-name="spindle7" class="ssitems cls-4" x="859" y="1784" width="80" height="1190"/>
+  <rect data-part="SPINDLE" data-value="8"  data-name="spindle8" class="ssitems cls-4" x="973" y="1784" width="80" height="1169"/>
+  <rect data-part="SPINDLE" data-value="9"  data-name="spindle9" class="ssitems cls-4" x="1087" y="1784" width="80" height="1149"/>
+  <rect data-part="SPINDLE" data-value="10"  data-name="spindle10" class="ssitems cls-4" x="1201" y="1784" width="80" height="1130"/>
+  <rect data-part="SPINDLE" data-value="11"  data-name="spindle11" class="ssitems cls-4" x="1315" y="1784" width="80" height="1112"/>
+  <rect data-part="SPINDLE" data-value="12"  data-name="spindle12" class="ssitems cls-4" x="1429" y="1784" width="80" height="1095"/>
+  <rect data-part="SPINDLE" data-value="13"  data-name="spindle13" class="ssitems cls-4" x="1515" y="1784" width="80" height="1079"/>
+  <rect data-part="SPINDLE" data-value="14"  data-name="spindle14" class="ssitems cls-4" x="1601" y="1784" width="80" height="1064"/>
+  <rect data-part="SPINDLE" data-value="15"  data-name="spindle15" class="ssitems cls-4" x="1715" y="1784" width="80" height="1050"/>
+  <rect data-part="SPINDLE" data-value="16"  data-name="spindle16" class="ssitems cls-4" x="1801" y="1784" width="80" height="1037"/>
+  <rect data-part="SPINDLE" data-value="17"  data-name="spindle17" class="ssitems cls-4" x="1887" y="1784" width="80" height="1025"/>
+  <rect data-part="SPINDLE" data-value="18"  data-name="spindle18" class="ssitems cls-4" x="1973" y="1784" width="80" height="1014"/>
+  <rect data-part="SPINDLE" data-value="19"  data-name="spindle19" class="ssitems cls-4" x="2059" y="1784" width="80" height="1004"/>
+  <rect data-part="SPINDLE" data-value="20"  data-name="spindle20" class="ssitems cls-4" x="2145" y="1784" width="80" height="995"/>
+  <rect data-part="SPINDLE" data-value="21"  data-name="spindle21" class="ssitems cls-4" x="2319" y="1784" width="80" height="987"/>
+  <rect data-part="SPINDLE" data-value="22"  data-name="spindle22" class="ssitems cls-4" x="2405" y="1784" width="80" height="987"/>
+  <rect data-part="SPINDLE" data-value="23"  data-name="spindle23" class="ssitems cls-4" x="2519" y="1784" width="80" height="1004"/>
+  <rect data-part="SPINDLE" data-value="24"  data-name="spindle24" class="ssitems cls-4" x="2613" y="1784" width="80" height="1025"/>
+  <rect data-part="SPINDLE" data-value="25"  data-name="spindle25" class="ssitems cls-4" x="2727" y="1784" width="80" height="1050"/>
+  <rect data-part="SPINDLE" data-value="26"  data-name="spindle26" class="ssitems cls-4" x="2841" y="1784" width="80" height="1079"/>
+  <rect data-part="SPINDLE" data-value="27"  data-name="spindle27" class="ssitems cls-4" x="2935" y="1784" width="80" height="1079"/>
+  <rect data-part="SPINDLE" data-value="28"  data-name="spindle28" class="ssitems cls-4" x="3049" y="1784" width="80" height="1095"/>
+  <rect data-part="SPINDLE" data-value="29"  data-name="spindle29" class="ssitems cls-4" x="3167" y="1784" width="80" height="1130"/>
+  <rect data-part="SPINDLE" data-value="30"  data-name="spindle30" class="ssitems cls-4" x="3302" y="1784" width="80" height="1149"/>
+  <rect data-part="SPINDLE" data-value="31"  data-name="spindle31" class="ssitems cls-4" x="3416" y="1784" width="80" height="1149"/>
+  
+  <rect data-name="newelposts" data-part="NEWEL" data-value="NEWEL POSTS" class="ssitems cls-5" x="1176" y="1796" width="124" height="1133"/>
+  <rect data-name="newelposts2" data-part="NEWEL" data-value="NEWEL POSTS" class="ssitems cls-5" x="2197" y="1632" width="124" height="1133"/>
+  <rect data-name="newelposts3" data-part="NEWEL" data-value="NEWEL POSTS" class="ssitems cls-5" x="3388" y="1778" width="124" height="1133"/>
+  
+</svg>

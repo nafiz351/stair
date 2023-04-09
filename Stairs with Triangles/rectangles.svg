@@ -1,0 +1,94 @@
+<svg id="stainless_steel_post" data-name="stainless steel post" xmlns="http://www.w3.org/2000/svg" width="2644" height="2800" viewBox="0 0 2644 2800">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: transparent;
+      }
+
+      .cls-2 {
+        fill:transparent;
+      }
+
+      .cls-3 {
+        fill: transparent;
+      }
+
+      .cls-4 {
+        fill: transparent;
+      }
+
+      .cls-5 {
+        fill: transparent;
+      }
+
+      .cls-6 {
+        fill: transparent;
+      }
+
+      .cls-7 {
+        fill: transparent;
+      }
+	  .cls-60{
+        fill: transparent;
+	  }
+    </style>
+  </defs>
+  <rect data-name="glass"         data-value="GLASS"         data-part="GLASS"  class="ssitems cls-1" x="269" y="15" width="2356" height="2230"/>
+  
+  <rect data-name="footrail"      data-value="FOOTRAIL"      data-part="HANDRAILFOOTRAIL"  class="ssitems cls-2" x="124" y="305" width="2471" height="2100"/>
+  
+  <rect data-name="handrail"  data-value="HANDRAIL"  data-part="HANDRAILFOOTRAIL" class="ssitems cls-3" x="484" y="10" width="2121" height="1205"/>
+  
+  <rect data-name="handrailfront" data-value="STRAIGHT HANDRAIL" data-part="HANDRAILFOOTRAIL" class="ssitems cls-4" x="59" y="465" width="2541" height="1400"/>
+  <rect data-name="handrailfrontV" data-value="VOLUTE HANDRAIL" data-part="HANDRAILFOOTRAIL" class="ssitems cls-4" x="59" y="465" width="2541" height="1400"/>
+  
+  <rect data-name="newelsteel1" data-part="NEWEL" data-value="ALL POSTS" class="ssitems cls-5 steelnewel" x="2511" y="-8" width="84" height="446"/>
+  <rect data-name="newelsteel2" data-part="NEWEL" data-value="ALL POSTS" class="ssitems cls-5 steelnewel" x="1557" y="1198" width="51" height="933"/>
+  <rect data-name="newelsteel3" data-part="NEWEL" data-value="ALL POSTS" class="ssitems cls-5 steelnewel" x="1371" y="1500" width="75" height="892"/>
+  <rect data-name="newelsteel4" data-part="NEWEL" data-value="ALL POSTS" class="ssitems cls-5 steelnewel" x="1032" y="950" width="51" height="665"/>
+  <rect data-name="newelsteel5" data-part="NEWEL" data-value="ALL POSTS" class="ssitems cls-5 steelnewel" x="557" y="884" width="55" height="958"/>
+  <rect data-name="newelsteel6" data-part="NEWEL" data-value="ALL POSTS" class="ssitems cls-5 steelnewel" x="495" y="1161" width="51" height="896"/>
+  <rect data-name="newelsteel7" data-part="NEWEL" data-value="ALL POSTS" class="ssitems cls-5 steelnewel" x="280" y="1463" width="63" height="846"/>
+  <rect data-name="newelsteel8" data-part="NEWEL" data-value="ALL POSTS" class="ssitems cls-5 steelnewel" x="1581" y="459" width="51" height="842"/>
+  <!-- right side -->
+  <rect  data-part="SPINDLE" data-value="R1"  data-name="spindleR1" class="ssitems cls-60 " x="1579" y="1415" width="41" height="975"/>
+  <rect  data-part="SPINDLE" data-value="R2"  data-name="spindleR2" class="ssitems cls-60" x="1464" y="1415" width="41" height="975"/>
+  <rect  data-part="SPINDLE" data-value="R3"  data-name="spindleR3" class="ssitems cls-60" x="1421" y="1415" width="41" height="975"/>
+  <rect  data-part="SPINDLE" data-value="R4"  data-name="spindleR4" class="ssitems cls-60" x="1368" y="1400" width="41" height="975"/>
+  <rect  data-part="SPINDLE" data-value="R5"  data-name="spindleR5" class="ssitems cls-60" x="1485" y="1146" width="41" height="975"/>
+  <rect  data-part="SPINDLE" data-value="R6"  data-name="spindleR6" class="ssitems cls-60" x="1526" y="1133" width="41" height="975"/>
+  <rect  data-part="SPINDLE" data-value="R7"  data-name="spindleR7" class="ssitems cls-60" x="1680" y="343" width="41" height="975"/>
+  <rect  data-part="SPINDLE" data-value="R8"  data-name="spindleR8" class="ssitems cls-60" x="1796" y="126" width="41" height="975"/>
+  <rect  data-part="SPINDLE" data-value="R9"  data-name="spindleR9" class="ssitems cls-60" x="1912" y="126" width="41" height="975"/>
+  <rect  data-part="SPINDLE" data-value="R10"  data-name="spindleR10" class="ssitems cls-60" x="2023" y="86" width="45" height="798"/>
+  <rect  data-part="SPINDLE" data-value="R11"  data-name="spindleR11" class="ssitems cls-60" x="2151" y="7" width="37" height="870"/>
+  <rect  data-part="SPINDLE" data-value="R12"  data-name="spindleR12" class="ssitems cls-60" x="2267" y="9" width="46" height="663"/>
+  <rect  data-part="SPINDLE" data-value="R13"  data-name="spindleR13" class="ssitems cls-60" x="2383" y="9" width="58" height="652"/>
+  <rect  data-part="SPINDLE" data-value="R14"  data-name="spindleR14" class="ssitems cls-60" x="2513" y="9" width="45" height="431"/>
+  
+  <!-- left side -->
+  <rect data-part="SPINDLE" data-value="L1"   data-name="spindleL1" class="ssitems cls-6" x="146" y="1391" width="34" height="877"/>
+  <rect data-part="SPINDLE" data-value="L2"   data-name="spindleL2" class="ssitems cls-6" x="205" y="1396" width="36" height="885"/>
+  <rect data-part="SPINDLE" data-value="L3"   data-name="spindleL3" class="ssitems cls-6" x="290" y="1393" width="34" height="892"/>
+  <rect data-part="SPINDLE" data-value="L4"   data-name="spindleL4" class="ssitems cls-6" x="362" y="1393" width="34" height="877"/>
+  <rect data-part="SPINDLE" data-value="L5"   data-name="spindleL5" class="ssitems cls-6" x="438" y="1335" width="28" height="722"/>
+  <rect data-part="SPINDLE" data-value="L6"   data-name="spindleL6" class="ssitems cls-6" x="503" y="1232" width="30" height="814"/>
+  <rect data-part="SPINDLE" data-value="L7"   data-name="spindleL7" class="ssitems cls-6" x="662" y="1043" width="32" height="788"/>
+  <rect data-part="SPINDLE" data-value="L8"   data-name="spindleL8" class="ssitems cls-6" x="726" y="1047" width="27" height="779"/>
+  <rect data-part="SPINDLE" data-value="L9"   data-name="spindleL9" class="ssitems cls-6" x="780" y="1052" width="28" height="768"/>
+  <rect data-part="SPINDLE" data-value="L10"   data-name="spindleL10" class="ssitems cls-6" x="836" y="1058" width="26" height="748"/>
+  <rect data-part="SPINDLE" data-value="L11"   data-name="spindleL11" class="ssitems cls-6" x="886" y="1069" width="22" height="561"/>
+  <rect data-part="SPINDLE" data-value="L12"   data-name="spindleL12" class="ssitems cls-6" x="926" y="1071" width="29" height="555"/>
+  <rect data-part="SPINDLE" data-value="L13"   data-name="spindleL13" class="ssitems cls-6" x="984" y="1074" width="24" height="547"/>
+  <rect data-part="SPINDLE" data-value="L14"   data-name="spindleL14" class="ssitems cls-6" x="1022" y="1080" width="25" height="533"/>
+  
+  <rect data-name="newelpost1" data-part="NEWEL" data-value="UPPER POST" class="ssitems cls-7 woodnewel" x="2476" y="11" width="133" height="427"/>
+  
+  <rect  data-name="newelpost2" data-part="NEWEL" data-value="CORNER POSTS" class="ssitems cls-7 woodnewel" x="1540" y="311" width="121" height="979"/>
+  <rect   data-name="newelpost3" data-part="NEWEL" data-value="CORNER POSTS" class="ssitems cls-7 woodnewel" x="1037" y="983" width="103" height="630"/>
+  <rect   data-name="newelpost4" data-part="NEWEL" data-value="CORNER POSTS" class="ssitems cls-7 woodnewel" x="533" y="929" width="115" height="918"/>
+  
+  <rect   data-name="newelpost5" data-part="NEWEL" data-value="BOTTOM POSTS" class="ssitems cls-7 woodnewel" x="239" y="1301" width="163" height="996"/>
+  <rect   data-name="newelpost6" data-part="NEWEL" data-value="BOTTOM POSTS" class="ssitems cls-7 woodnewel" x="1330" y="1313" width="139" height="1074"/>
+  
+</svg>
