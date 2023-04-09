@@ -1,0 +1,79 @@
+<svg id="mysvg" xmlns="http://www.w3.org/2000/svg" width="2551" height="2704" viewBox="0 0 2551 2704" >
+  <metadata>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+</metadata>
+<defs>
+    <style>
+     .cls-1 {
+        fill: transparent;
+      }
+
+      .cls-2 {
+        fill: transparent;
+      }
+
+      .cls-3 {
+        fill: transparent;
+      }
+
+      .cls-4 {
+        fill: transparent;
+      }
+    </style>
+  </defs>
+  <!-- <path data-name="glass" class="cls-1 ssitems" data-value="UPPER" data-part="GLASS" d="M398.051,1552.66L1278.86,827.269V1465.71L398.051,2193.47V1552.66Z"/>
+  <path  data-name="glass" class="cls-1 ssitems" data-value="UPPER" data-part="GLASS" d="M1338.05,775.665L2213,56l3,637-877.95,723.47V775.665Z"/>
+  <path  data-name="glass" class="cls-1 ssitems" data-value="UPPER" data-part="GLASS" d="M2274,10l870.86-692.731v638.44L2275,645Z"/> -->
+  <rect  data-name="glass" class="cls-1 ssitems" data-value="GLASS" data-part="GLASS" x="327" y="511" width="2570" height="1506"/>
+  <rect data-name="newelpost1" data-value="Bottom" class="cls-2 ssitems" data-part="NEWEL"  x="327" y="1352" width="95" height="979"/>
+  <rect data-name="newelpost2"  data-value="Center" class="cls-2 ssitems" data-part="NEWEL" x="1270" y="572" width="95" height="979"/>
+  <rect data-name="newelpost3"  data-value="Top" class="cls-2 ssitems" data-part="NEWEL" x="2201" y="-208" width="95" height="979"/>
+  <rect data-name="spindle1" data-value="1" class="cls-3 ssitems" data-part="SPINDLE" x="457" y="1442" width="37" height="882"/>
+  <rect data-name="spindle2" data-value="2" class="cls-3 ssitems" data-part="SPINDLE" x="575" y="1329" width="37" height="800"/>
+  <rect data-name="spindle3" data-value="3" class="cls-3 ssitems" data-part="SPINDLE" x="692" y="1247" width="37" height="882"/>
+  <rect data-name="spindle4" data-value="4" class="cls-3 ssitems" data-part="SPINDLE" x="809" y="1141" width="37" height="795"/>
+  <rect data-name="spindle5" data-value="5" class="cls-3 ssitems" data-part="SPINDLE" x="927" y="1054" width="37" height="882"/>
+  <rect data-name="spindle6" data-value="6" class="cls-3 ssitems" data-part="SPINDLE" x="1044" y="950" width="37" height="792"/>
+  <rect data-name="spindle7" data-value="7" class="cls-3 ssitems" data-part="SPINDLE" x="1161" y="859" width="37" height="882"/>
+  <rect data-name="spindle8" data-value="8" class="cls-3 ssitems" data-part="SPINDLE" x="1276" y="752" width="37" height="799"/>
+  <rect data-name="spindle9" data-value="9" class="cls-3 ssitems" data-part="SPINDLE" x="1395" y="665" width="37" height="882"/>
+  <rect data-name="spindle10" data-value="10" class="cls-3 ssitems" data-part="SPINDLE" x="1512" y="563" width="37" height="791"/>
+  <rect data-name="spindle11" data-value="11" class="cls-3 ssitems" data-part="SPINDLE" x="1629" y="472" width="37" height="882"/>
+  <rect data-name="spindle12" data-value="12" class="cls-3 ssitems" data-part="SPINDLE" x="1747" y="372" width="37" height="788"/>
+  <rect data-name="spindle13" data-value="13" class="cls-3 ssitems" data-part="SPINDLE" x="1863" y="278" width="37" height="882"/>
+  <rect data-name="spindle14" data-value="14" class="cls-3 ssitems" data-part="SPINDLE" x="1980" y="190" width="37" height="775"/>
+  <rect data-name="spindle15" data-value="15" class="cls-3 ssitems" data-part="SPINDLE" x="2097" y="83" width="37" height="882"/>
+  <rect data-name="spindle16" data-value="16" class="cls-3 ssitems" data-part="SPINDLE" x="2214" y="-112" width="37" height="882"/>
+  <rect data-name="spindle17" data-value="17" class="cls-3 ssitems" data-part="SPINDLE" x="2330" y="-111" width="37" height="882"/>
+  <rect data-name="spindle18" data-value="18" class="cls-3 ssitems" data-part="SPINDLE" x="2446" y="-306" width="37" height="882"/>
+  <rect data-name="handrail" data-value="HANDRAIL" data-part="HANDRAIL" class="cls-4 ssitems" x="327" y="36" width="2556" height="1406"/>
+  <rect data-name="footrail" data-value="FOOTRAIL" data-part="FOOTRAIL" class="cls-4 ssitems" x="327" y="836" width="2556" height="1406"/>
+
+   <!-- <rect data-name="footrail" data-value="FOOTRAIL" data-part="FOOTRAIL" class="cls-3 ssitems" x="-959" y="1911" width="2656" height="106" transform="rotate(-36)" data-transform="-36"/> -->
+  <!-- <path data-name="handrail" data-value="HANDRAIL" data-part="HANDRAIL" class="cls-4 ssitems" d="M262.023,1540.26L2235.37-73.129l35.45,43.354L297.469,1583.62Z"/> -->
+</svg>
