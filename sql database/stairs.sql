@@ -6439,7 +6439,7 @@ CREATE TABLE `stairdesigns` (
 INSERT INTO `stairdesigns` (`id`, `design_name`) VALUES
 (1, 'Straight Stairs'),
 (2, 'Stairs with Landing'),
-(3, 'Stairs with triangles'),
+(3, 'Stairs with Triangles'),
 (4, 'Curved Stairs'),
 (5, 'Balcony');
 

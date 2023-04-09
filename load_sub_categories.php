@@ -447,7 +447,7 @@ $designcategory=$_POST['designcategory'];
 		  AND designtype.designid='$bgid'  GROUP BY design_parts.sub_category_id";
 		}else if($designcategory=='squer'){
 			// steel squer
-		$read=" Select Squer Parts ";
+		$read=" Select Square Parts ";
 			$sql="SELECT subcategory.id, subcategory.subcategory_show_name FROM subcategory
 	      INNER JOIN category ON category.id=subcategory.categoryid
 	      INNER JOIN designtype ON designtype.id=category.designtypeid
