@@ -9,9 +9,9 @@ require_once 'includes/config.php';
         <ul class="nav">
           <li class="nav-item profile">
               <a class="nav-link" href="#">
-              <span class="menu-icon">
+              <!--<span class="menu-icon">
                <img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" />
-              </span>
+              </span>-->
               <span class="menu-title"><img src="assets/images/logo/logo-gray.png" style="max-width:130px; max-height:30px;" alt="logo" /></span>
             </a>
           </li>

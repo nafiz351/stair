@@ -6082,12 +6082,13 @@ function loadRectangles(){
 
                      // ...........load divs for each part................
                      $(".dropdiv").remove();
+                     var designCtg = document.getElementsByClassName("gridpart")[0].getAttribute("data-url").split("/")[0];
                      var dropdivs=document.getElementsByClassName("ssitems");
                      var parentRect=document.getElementById("maindiv").getBoundingClientRect();
                      var parentleft=parentRect.left;
                      var parenttop=parentRect.top;
                      for (let index = 0; index < dropdivs.length; index++) {
-                       var elmid=dropdivs[index].getAttribute("data-name");
+                      var elmid=dropdivs[index].getAttribute("data-name");
                       //  console.log(elmid);
                       var elmvalue=dropdivs[index].getAttribute("data-value");
                       var elmpart=dropdivs[index].getAttribute("data-part");
@@ -6099,10 +6100,145 @@ function loadRectangles(){
                       var elmtop=positionInfo.top;
                       var elmright=positionInfo.right;
                       var elmbottom=positionInfo.bottom;
-
                       
                       elmtop=elmtop-parenttop;
                       elmleft=elmleft-parentleft;
+
+                      if(designCtg == "Straight Stairs"){
+                        if(elmid == "newelpost1" || elmid == "newelpost2"){
+                          elmtop = elmtop + 55;
+                          elementht = elementht - 55;
+                        }
+                      }
+
+                      if(designCtg == "Stairs with Landing" && elmpart == "SPINDLE"){                          
+                        if(elmid == 'spindleR5' || elmid == 'spindleR8' || elmid == 'spindleR10' || elmid == 'spindleR14' || elmid == 'spindleL6'){
+                          elmtop = elmtop + 50;
+                          elementht = elementht - 50;
+                        } 
+                        if(elmid == 'spindleL4'){
+                          elmtop = elmtop + 45;
+                          elementht = elementht - 45;
+                        }   
+                        if(elmid == 'spindleL12' || elmid == 'spindleL14'){
+                          elmtop = elmtop + 95;
+                          elementht = elementht - 95;
+                        }                    
+                        if(elmid == 'spindleL10'){
+                          elmtop = elmtop + 85;
+                          elementht = elementht - 85;
+                        }
+                        if(elmid == 'spindleL11'){
+                          elmtop = elmtop + 90;
+                          elementht = elementht - 90;
+                        }
+                        if(elmid == 'spindleL8'){
+                          elmtop = elmtop + 75;
+                          elementht = elementht - 75;
+                        }
+                        if(elmid == 'spindleL7'){
+                          elmtop = elmtop + 70;
+                          elementht = elementht - 70;
+                        }
+                        if(elmid == 'spindleL5' || elmid == 'spindleL9'){
+                          elmtop = elmtop + 80;
+                          elementht = elementht - 80;
+                        }
+                        if(elmid == 'spindleL13'){
+                          elmtop = elmtop + 100;
+                          elementht = elementht - 100;
+                        }
+
+                        if(elmid == 'spindleR11' || elmid == 'spindleR13'){
+                          elmtop = elmtop + 5;
+                          elementht = elementht - 5;
+                        } 
+                        if(elmid == 'spindleR1' || elmid == 'spindleR2' || elmid == 'spindleR3' || elmid == 'spindleR4'){
+                          elmtop = elmtop - 10;
+                          elementht = elementht + 10;
+                        } 
+                        if(elmid == 'spindleR6'){
+                          elmtop = elmtop + 25;
+                          elementht = elementht - 25;
+                        }
+                        if(elmid == 'spindleR7'){
+                          elmtop = elmtop + 20;
+                          elementht = elementht - 20;
+                        } 
+                        if(elmid == 'spindleR9'){
+                          elmtop = elmtop + 15;
+                          elementht = elementht - 15;
+                        } 
+                        if(elmid == 'spindleR12'){
+                          elmtop = elmtop + 40;
+                          elementht = elementht - 40;
+                        }
+                      }
+
+                      if(designCtg == "Stairs with Triangles" && elmpart == "SPINDLE"){ 
+                        if(elmid == 'spindleR5' || elmid == 'spindleR8'){
+                          elmtop = elmtop + 57;
+                          elementht = elementht - 57;
+                        }
+                        if(elmid == 'spindleR6'){
+                          elmtop = elmtop + 30;
+                          elementht = elementht - 30;
+                        }
+                        if(elmid == 'spindleR7' || elmid == 'spindleR9'){
+                          elmtop = elmtop + 15;
+                          elementht = elementht - 15;
+                        }
+                      }
+
+                      if(designCtg == "Curved Stairs" && elmpart == "SPINDLE"){                        
+                        if(elmid == 'spindle4' || elmid == 'spindle6'){
+                          elmtop = elmtop + 65;
+                          elementht = elementht - 65;
+                        }
+                        if(elmid == 'spindle5'){
+                          elmtop = elmtop + 30;
+                          elementht = elementht - 30;
+                        }
+                        if(elmid == 'spindle7' || elmid == 'spindle9'){
+                          elmtop = elmtop + 40;
+                          elementht = elementht - 40;
+                        }
+                        if(elmid == 'spindle8' || elmid == 'spindle12' || elmid == 'spindle14'){
+                          elmtop = elmtop + 70;
+                          elementht = elementht - 70;
+                        }
+                        if(elmid == 'spindle10'){
+                          elmtop = elmtop + 75;
+                          elementht = elementht - 75;
+                        }
+                        if(elmid == 'spindle11' || elmid == 'spindle13'){
+                          elmtop = elmtop + 42;
+                          elementht = elementht - 42;
+                        }
+                        if(elmid == 'spindle15'){
+                          elmtop = elmtop + 35;
+                          elementht = elementht - 35;
+                        }
+                        if(elmid == 'spindle16'){
+                          elmtop = elmtop + 2;
+                          elementht = elementht + 2;
+                        }                        
+                      }
+
+                      if(designCtg == "Balcony"){
+                        if(elmpart == "SPINDLE"){
+                          elmtop = elmtop + 25;
+                          elementht = elementht - 25;
+                        }
+                        if(elmid == "newelposts"){
+                          elmtop = elmtop - 5;
+                          elementht = elementht + 5;
+                        }
+                        if(elmid == "newelposts2"){
+                          elmtop = elmtop + 40;
+                          elementht = elementht - 40;
+                        }
+                      }
                       
 
                       var newelm='<div class="dropdiv  '+elmpart+'" id="t'+elmid+'" data-name="'+elmid+'" data-value="'+elmvalue+'" style=" position:absolute; left: '+elmleft+'px; top: '+elmtop+'px;  width:'+elementwid+'px; height:'+ elementht+'px;"></div>';
