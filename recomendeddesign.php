@@ -135,11 +135,14 @@ error_reporting(0);
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                   <div class="navbar-profile">
-                    <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
+                  
 					 <?php if(strlen($_SESSION['login']))
 	{   ?>
+                    <img class="img-xs rounded-circle" src="assets/images/faces/<?php echo ($_SESSION['avatar'] == '' || $_SESSION['avatar'] == null) ? 'face0' : $_SESSION['avatar']; ?>.jpg" alt="">
                     <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo htmlentities($_SESSION['username']);?></p>
-					<?php } ?>
+					<?php } else {?> 
+              <img class="img-xs rounded-circle" src="assets/images/faces/face0.jpg" alt="">
+            <?php } ?>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
                 </a>

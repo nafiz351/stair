@@ -10,12 +10,13 @@ error_reporting(0);
   {
     $name=$_POST['username'];
     $contactno=$_POST['contactno'];
-    $query=mysqli_query($con,"update users set name='$name',contactno='$contactno' where id='".$_SESSION['id']."'");
+    $avatar = $_POST['avatar'];
+    $query=mysqli_query($con,"update users set name='$name',contactno='$contactno', avatar='$avatar' where id='".$_SESSION['id']."'");
     if($query)
     {
 		
-	$_SESSION['username']=$name;
-    echo "<script>alert('Your info has been updated'); window.location = 'recomendeddesign.php';</script>";
+	    $_SESSION['username']=$name;
+      echo "<script>alert('Your info has been updated'); window.location = 'recomendeddesign.php';</script>";
 	
     }
   }
@@ -69,7 +70,55 @@ error_reporting(0);
 	input{
 		color:white !important;
 	}
-	
+
+  #logemail {
+    background-color: #444;
+  }
+
+	img.faceImg {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+  }
+
+  .cc-selector-2 input:active +.drinkcard-cc, .cc-selector input:active +.drinkcard-cc{opacity: .9;}
+  .cc-selector-2 input:checked +.drinkcard-cc, .cc-selector input:checked +.drinkcard-cc{
+      -webkit-filter: none;
+        -moz-filter: none;
+              filter: none;
+  }
+  .drinkcard-cc{
+      cursor:pointer;
+      background-size:contain;
+      background-repeat:no-repeat;
+      display:inline-block;
+      width:50px;height:70px;
+      -webkit-transition: all 100ms ease-in;
+        -moz-transition: all 100ms ease-in;
+              transition: all 100ms ease-in;
+      -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+        -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+              filter: brightness(1.8) grayscale(1) opacity(.7);
+  }
+  .drinkcard-cc:hover{
+      -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+        -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+              filter: brightness(1.2) grayscale(.5) opacity(.9);
+  }
+
+    /* Extras */
+    a:visited{color:#888}
+    a{color:#444;text-decoration:none;}
+    p{margin-bottom:.3em;}
+    span.cc{ color:#6d84b4 }
 	</style>
   </head>
   <body>
@@ -98,12 +147,32 @@ while($row=mysqli_fetch_array($query))
                     <label>Cell Phone</label>
                     <input  type="number" name="contactno" value="<?php echo $row['contactno'];?>"  placeholder="Your Contact" id="logemail" autocomplete="off" class="form-control p_input">
                   </div>
+                  <div class="form-group">
+                    <label>Avatar</label>
+                    <!-- <img class="faceImg form-control p_input" src="assets/images/faces/face1.jpg"/> -->
+                    <div class="cc-selector">
+
+                      <?php 
+                          for ($avatarImageCount = 1; $avatarImageCount <= 26; $avatarImageCount++) {
+                              ?>
+                              <input 
+                                  <?php echo $row['avatar'] == 'face'.$avatarImageCount ? 'checked' : '' ?>
+                                   id="face<?php echo $avatarImageCount; ?>" type="radio" name="avatar" value="face<?php echo $avatarImageCount; ?>" />
+                              <label class="drinkcard-cc face<?php echo $avatarImageCount; ?>" for="face<?php echo $avatarImageCount; ?>">
+                              <img class="faceImg form-control p_input" src="assets/images/faces/face<?php echo $avatarImageCount; ?>.jpg"/></label>
+                          <?php 
+                          }
+                        
+                      ?>
+                  </div>
+                  </div>
                   <div class="form-group d-flex align-items-center justify-content-between">
                     
                     <a href="changepassword.php" class="forgot-pass">Change password</a>
                   </div>
                   <div class="text-center">
                     <button type="submit"   name="update_profile"  class="btn btn-primary btn-block enter-btn">Update</button>
+                    <a href="recomendeddesign.php"><button type="button"   name="cancel_update_profile"  class="btn btn-danger btn-block enter-btn">Cancel</button></a>
                   </div>
                  </form>
 				  <?php } ?>  
