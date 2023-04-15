@@ -18,6 +18,7 @@ $extra="recomendeddesign.php";
 $_SESSION['login']=$_POST['uemail'];
 $_SESSION['id']=$num['id'];
 $_SESSION['username']=$num['name'];
+$_SESSION['avatar'] = $num['avatar'];
 $uip=$_SERVER['REMOTE_ADDR'];
 $status=1;
 $log=mysqli_query($con,"insert into userlog(userEmail,userip,status) values('".$_SESSION['login']."','$uip','$status')");
