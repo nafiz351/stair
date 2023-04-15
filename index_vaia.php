@@ -30,7 +30,53 @@ error_reporting(0);
   <link rel="shortcut icon" href="assets/images/logo/logo-gray-mini.png" />
   <script src="html2canvas.min.js" type="text/javascript"></script> 
   <style>
-    /* new Added */
+    /* new Added by kamal */
+
+
+.panel  > .nav-item:hover:not(.nav-category):not(.account-dropdown) > .nav-link {
+  background: #0f1015; !important
+  color: #ffffff;
+}
+
+
+.accordion {
+  background-color: #191c24;
+  
+  cursor: pointer;
+  padding: 18px 8px 18px 8px ;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #2e3035; 
+}
+
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  display: none;
+  
+  
+  overflow: hidden;
+}
+    
+    
+    
     @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 992px)
@@ -53,7 +99,7 @@ error_reporting(0);
     }
     
 
-    /* new Added */
+    /* new Added by kamal End*/
 
     @media screen and (orientation:landscape)
     and (min-device-width: 300px) 
@@ -79,6 +125,7 @@ error_reporting(0);
     display:none;
     
     padding:0px;
+    overflow-y:auto;
 	/*overflow-y:scroll;
   max-height:64% !important;*/
 
@@ -416,6 +463,7 @@ error_reporting(0);
         <a class="sidebar-brand brand-logo-mini" href="index.php"><img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" /></a>
       </div>
       <ul class="nav" style="">
+      
         <li class="nav-item profile">
           <a class="nav-link" href="#">
               <!--span class="menu-icon">
@@ -470,11 +518,11 @@ error_reporting(0);
             </a>
           </li-->
           <?php //} ?>
-          <li class="nav-item nav-category">
-            <span class="nav-link">Choose your Staircase</span>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link choosebgbtn" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <button class="accordion firstTab "><span style="color:#6c7293">Choose your Staircase</span></button>
+<div class="panel">
+ 
+          <li class="nav-item menu-items mykml" >
+            <a class="nav-link choosebgbtn" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic" style="margin-left:12px;padding-left:0">
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
@@ -497,10 +545,11 @@ error_reporting(0);
           </div>
         </li>
 
-        <li class="nav-item nav-category whenstairchoosed">
-          <span class="nav-link">Colour Sections</span>
-        </li>
-        <li class="nav-item menu-items whenstairchoosed" id="treads" >
+</div>
+
+<button class="accordion"><span style="color:#6c7293">Colour Sections</span></button>
+<div class="panel">
+  <li class="nav-item menu-items whenstairchoosed" id="treads" >
           <a class="nav-link basiccolors" data-toggle="collapse" value="treads" href="#treadcolors" aria-expanded="false" aria-controls="ui-basic">
             <span class="menu-icon">
               <i class="mdi mdi-stairs"></i>
@@ -640,11 +689,13 @@ error_reporting(0);
     </ul>
   </div>
 </li>
-<li class="nav-item nav-category whenstairchoosed">
-  <span class="nav-link">Parts Sections</span>
-</li>
+</div>
+
+<button class="accordion"><span style="color:#6c7293">Parts Sections</span></button>
+<div class="panel">
+ 
 <li class="nav-item menu-items whenstairchoosed" id="mybalu">
-  <a class="nav-link designtypeddbtn" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic">
+  <a class="nav-link designtypeddbtn" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic" style="">
     <span class="menu-icon">
       <i class="mdi mdi-laptop"></i>
     </span>
@@ -765,6 +816,11 @@ error_reporting(0);
    </div>
  </div>
 </li>
+</div>
+          
+       
+        
+
 <li class="nav-item menu-items whenstairchoosed HideMeOnDesktop">
   <a class="nav-link" href="#">
     <span class="menu-icon">
@@ -811,15 +867,13 @@ error_reporting(0);
           </a>
         </li>
         <li class="nav-item dropdown border-left">
-          <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-            <i class="mdi mdi-web"></i>
-          </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-            <h6 class="p-3 mb-0">Browse Pages</h6>
+            <h6 class="p-3 mb-0">1Browse Pages</h6>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item preview-item" href="recomendeddesign.php"  id="rdes" >
               <div class="preview-thumbnail">
-                <div class="preview-icon bg-dark rounded-circle">
+             
+             <div class="preview-icon bg-dark rounded-circle">
                   <i class="mdi mdi-web text-success"></i>
                 </div>
               </div>
@@ -856,7 +910,7 @@ error_reporting(0);
               </a>
             <?php } ?>
             <div class="dropdown-divider"></div>
-            <p class="p-3 mb-0 text-center">StairsSteps Designs</p>
+            <p class="p-3 mb-0 text-center">kamal11 StairsSteps Designs</p>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -881,6 +935,7 @@ error_reporting(0);
                   <i class="mdi mdi-settings text-success"></i>
                 </div>
               </div>
+              
               <div class="preview-item-content">
                 <p class="preview-subject mb-1" >Settings</p>
               </div>
@@ -970,26 +1025,8 @@ error_reporting(0);
         <a class="sidebar-brand brand-logo-mini" href="index.php"><img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" /></a>
       </div>
       <ul class="nav" style="list-style-type: none;">
-        <li class="nav-item profile">
-          <a class="nav-link" href="#">
-              <!--span class="menu-icon">
-               <!--img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" /->
-               </span-->
-               <span class="menu-title"><img src="admin/images/logo-toolinside.png" style="max-width:130px; max-height:30px;" alt="logo" /></span>
-             </a>
 
-           </li>
-           <li class="nav-item nav-category">
-            <span class="nav-link">Design Tools</span>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="index.php">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Start Designing</span>
-            </a>
-          </li>
+
           <li class="nav-item menu-items whenstairchoosed">
             <a class="nav-link" href="#">
               <span class="menu-icon">
@@ -1072,11 +1109,42 @@ error_reporting(0);
             <i class="mdi mdi-magnify-plus zoom"></i>
           </a>
         </li>
+       
         <li class="nav-item dropdown border-left">
-          <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-            <i class="mdi mdi-web"></i>
-          </a>
+          
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+            
+            
+            <?php if(strlen($_SESSION['login']))
+            {   ?>
+              
+            <?php } ?>
+            
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+            <div class="navbar-profile">
+              <!--<img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">-->
+              <?php if(strlen($_SESSION['login']))
+              {   ?>
+                <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
+                <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo htmlentities($_SESSION['username']);?>
+                
+                </p>
+              <?php } ?>
+              
+              
+              <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+              
+            </div>
+          </a>
+          
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
+           <?php if(strlen($_SESSION['login']))
+           { ?>
+            <h6 class="p-3 mb-0" data-bs-toggle="modal" data-bs-target="#settings" >Profile</h6>
+            <div class="dropdown-divider"></div>
             <h6 class="p-3 mb-0">Browse Pages</h6>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item preview-item" href="recomendeddesign.php"  id="rdes" >
@@ -1085,9 +1153,10 @@ error_reporting(0);
                   <i class="mdi mdi-web text-success"></i>
                 </div>
               </div>
+              <div class="dropdown-divider"></div>
               <div class="preview-item-content">
-                <p class="preview-subject mb-1">Recommended Designs</p>
-                <p class="text-muted ellipsis mb-0">Recommended by Admin</p>
+                <p class="preview-subject mb-1">kml Recommended Designs</p>
+                <p class="text-muted ellipsis mb-0"> Recommended by Admin</p>
               </div>
             </a>
             <div class="dropdown-divider"></div>
@@ -1098,13 +1167,11 @@ error_reporting(0);
                 </div>
               </div>
               <div class="preview-item-content">
-                <p class="preview-subject mb-1">Customer Designs</p>
-                <p class="text-muted ellipsis mb-0">Saved by other users </p>
+                <p class="preview-subject mb-1">kml Customer Designs</p>
+                <p class="text-muted ellipsis mb-0"> Saved by other users </p>
               </div>
             </a>
-            <?php if(strlen($_SESSION['login']))
-            {   ?>
-              <div class="dropdown-divider"></div>
+            <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item" id="mdes"  href="myDesigns.php">
                 <div class="preview-thumbnail">
                   <div class="preview-icon bg-dark rounded-circle">
@@ -1112,30 +1179,12 @@ error_reporting(0);
                   </div>
                 </div>
                 <div class="preview-item-content">
-                  <p class="preview-subject mb-1">My Designs</p>
+                  <p class="preview-subject mb-1">kml My Designs</p>
                   <p class="text-muted ellipsis mb-0">Your Saved Designs</p>
                 </div>
               </a>
-            <?php } ?>
-            <div class="dropdown-divider"></div>
-            <p class="p-3 mb-0 text-center">StairsSteps Designs</p>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
-            <div class="navbar-profile">
-              <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
-              <?php if(strlen($_SESSION['login']))
-              {   ?>
-                <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo htmlentities($_SESSION['username']);?></p>
-              <?php } ?>
-              <i class="mdi mdi-menu-down d-none d-sm-block"></i>
-            </div>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-           <?php if(strlen($_SESSION['login']))
-           { ?>
-            <h6 class="p-3 mb-0" data-bs-toggle="modal" data-bs-target="#settings" >Profile</h6>
+              <div class="dropdown-divider"></div>
+            <p class="p-3 mb-0 text-center">kml StairsSteps Designs</p>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item preview-item"  href="profilesettings.php">
               <div class="preview-thumbnail">
@@ -1143,8 +1192,10 @@ error_reporting(0);
                   <i class="mdi mdi-settings text-success"></i>
                 </div>
               </div>
+                
               <div class="preview-item-content">
-                <p class="preview-subject mb-1" >Settings</p>
+                <p class="preview-subject mb-1" >kml Settings</p>
+                
               </div>
             </a>
             <div class="dropdown-divider"></div>
@@ -6666,5 +6717,37 @@ function loadRectangles(){
     ?>
     <script>
     </script>
+    <!---Added by Kamal Start -->
+    <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+jQuery(function(){
+   jQuery('.firstTab').click();
+});
+
+$(document).ready(function(){
+  $('.designbase').draggable({ 
+    axis: "y"
+});
+});
+</script>
+
+    <!---Added by Kamal End -->
   </body>
   </html>

@@ -27,7 +27,7 @@ error_reporting(0);
   <!-- Layout styles -->
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="assets/images/logo/logo-gray-mini.png" />
+  <link rel="shortcut icon" href="assets/images/logo/favicon.ico" />
   <script src="html2canvas.min.js" type="text/javascript"></script> 
   <style>
 
@@ -399,7 +399,7 @@ error_reporting(0);
              </a>
 
            </li>
-           <li class="nav-item nav-category">
+           <!--<li class="nav-item nav-category">
             <span class="nav-link">Design Tools</span>
           </li>
           <li class="nav-item menu-items">
@@ -409,7 +409,7 @@ error_reporting(0);
               </span>
               <span class="menu-title">Start Designing</span>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item menu-items whenstairchoosed">
             <a class="nav-link" href="#">
               <span class="menu-icon">
@@ -444,9 +444,9 @@ error_reporting(0);
             </a>
           </li-->
           <?php //} ?>
-          <li class="nav-item nav-category">
+          <!--<li class="nav-item nav-category">
             <span class="nav-link">Choose your Staircase</span>
-          </li>
+          </li> -->
           <li class="nav-item menu-items">
             <a class="nav-link choosebgbtn" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
