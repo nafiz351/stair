@@ -21139,7 +21139,7 @@ div.tagsinput {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 1.875rem 1.75rem;
+  padding: .5rem 1.75rem 1rem 1.75rem;
   width: 100%;
   -webkit-flex-grow: 1;
   flex-grow: 1; }
