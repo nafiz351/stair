@@ -51,7 +51,7 @@ $myid=$_GET['id'];
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="assets/images/logo/logo-gray-mini.png" />
+    <link rel="shortcut icon" href="assets/images/logo/favicon.ico" />
 	<style>
 	input{
 		color:white !important;

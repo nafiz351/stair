@@ -15,6 +15,8 @@ error_reporting(0);
   <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
+  <script src="https://kit.fontawesome.com/7f0de4659f.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="assets/vendors/jvectormap/jquery-jvectormap.css">
   <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
@@ -29,6 +31,7 @@ error_reporting(0);
   <!-- End layout styles -->
   <link rel="shortcut icon" href="assets/images/logo/favicon.ico" />
   <script src="html2canvas.min.js" type="text/javascript"></script> 
+
   <style>
     /* new Added by kamal */
 
@@ -52,7 +55,7 @@ error_reporting(0);
       transition: 0.4s;
     }
 
-    .active, .accordion:hover {
+    .accordionActive, .accordion:hover {
       background-color: #2e3035; 
     }
 
@@ -64,7 +67,7 @@ error_reporting(0);
       float: right;
       margin-left: 5px;
     }
-    .active:after {
+    .accordionActive:after {
       content: "\2212";
     }
 
@@ -486,108 +489,46 @@ error_reporting(0);
         <a class="sidebar-brand brand-logo" href="index.php"><img src="admin/images/logo-tool.png" alt="logo" /></a>
         <a class="sidebar-brand brand-logo-mini" href="index.php"><img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" /></a>
       </div>
-      <ul class="nav" style="">
-        <li class="nav-item profile" style="position: fixed; pointer-events: none;">
-          <a class="nav-link" href="#">
-              <!--span class="menu-icon">
-               <!--img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" /->
-               </span-->
-               <span class="menu-title"><img src="admin/images/logo-toolinside.png" style="max-width:130px; max-height:30px;" alt="logo" />&nbsp;</span>
-             </a>
-           </li>
+      <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top" style="margin-top: 50px; pointer-events: none;" >
+        <a class="sidebar-brand brand-logo" href="#"><img src="admin/images/logo-toolinside.png" alt="logo" /></a>
+      </div>
 
-           <button class="accordion firstTab" style="margin-top: 45px"><span style="color:#6c7293">Choose your Staircase</span></button>
-           <div class="panel">
+      <ul class="nav" style="margin-top: 45px;">
+       <button class="accordion firstTab"><span style="color:#6c7293">Choose your Staircase</span></button>
+       <div class="panel">
 
-            <li class="nav-item menu-items mykml" >
-              <a class="nav-link choosebgbtn" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-icon">
-                  <i class="mdi mdi-laptop"></i>
-                </span>
-                <span class="menu-title">Choose Staircase...</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                 <?php  $retc=mysqli_query($con,"select * from stairdesigns");
+        <li class="nav-item menu-items mykml" >
+
+          <div class="" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+             <?php  $retc=mysqli_query($con,"select * from stairdesigns");
 
 
-                 while ($rowc=mysqli_fetch_array($retc)) 
-                 {
-                  ?>
-                  <li class="nav-item"> <a class="nav-link choosebg" id="<?php echo $rowc['id'];?>" href="#"><?php echo $rowc['design_name'];?></a></li>
-                  <?php
+             while ($rowc=mysqli_fetch_array($retc)) 
+             {
+              ?>
+              <li class="nav-item"> <a class="nav-link choosebg" id="<?php echo $rowc['id'];?>" href="#"><?php echo $rowc['design_name'];?></a></li>
+              <?php
 
-                }?>
-              </ul>
-            </div>
-          </li>
-
+            }?>
+          </ul>
         </div>
+      </li>
 
-        <button class="accordion"><span style="color:#6c7293">Colour Sections</span></button>
-        <div class="panel">
-          <li class="nav-item menu-items whenstairchoosed" id="treads" >
-            <a class="nav-link basiccolors" data-toggle="collapse" value="treads" href="#treadcolors" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-stairs"></i>
-              </span>
-              <span class="menu-title">Treads</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="treadcolors">
-             <div id="container1" class="shadow-lg  colorcontainer rounded" style="background-color:#D6FFEF;" >
-               <div class="box" style="background-color:#000000" value="#000000" data-color="Black" title="Black"></div>
-               <div class="box" style="background-color:#DDB28E" value="#DDB28E" data-color="Tan" title="Tan"></div>
-               <div class="box" style="background-color:#D48541" value="#D48541" data-color="Amaretto" title="Amaretto"></div>
-               <div class="box" style="background-color:#65340A" value="#65340A" data-color="Coco" title="Coco"></div>
-               <div class="box" style="background-color:#652310" value="#652310" data-color="Praline" title="Praline"></div>
-               <div class="box" style="background-color:#472203" value="#472203" data-color="Coffee" title="Coffee"></div>
-               <div class="box" style="background-color:#847055" value="#847055" data-color="Sienna" title="Sienna"></div>
-               <div class="box" style="background-color:#B7B3A9" value="#B7B3A9" data-color="LightGrey" title="LightGrey"></div>
-               <div class="box" style="background-color:#676560" value="#676560" data-color="DarkGrey" title="DarkGrey"></div>
-               <div class="box" style="background-color:#6F1E14" value="#6F1E14" data-color="DarkMahogany" title="DarkMahogany"></div>
-               <div class="box" style="background-color:#815438" value="#815438" data-color="dark" title="dark"></div>
-               <div class="box" style="background-color:#B48463" value="#B48463" data-color="medium" title="medium"></div>
-               <div class="box" style="background-color:#caa472" value="#caa472" data-color="light" title="light"></div>
-             </div>
-           </div>
-         </li>
-         <li class="nav-item menu-items whenstairchoosed" id="risers">
-          <a class="nav-link basiccolors" value="risers" data-toggle="collapse" href="#riserscolors" aria-expanded="false" aria-controls="ui-basic">
-            <span class="menu-icon">
-              <i class="mdi mdi-stairs"></i>
-            </span>
-            <span class="menu-title">Risers</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="riserscolors">
-           <div id="container2" class="shadow-lg  colorcontainer rounded" style="background-color:#D6FFEF;">
-             <div class="box" style="background-color:#000000" value="#000000" data-color="Black" title="Black"></div>
-             <div class="box" style="background-color:#DDB28E" value="#DDB28E" data-color="Tan" title="Tan"></div>
-             <div class="box" style="background-color:#D48541" value="#D48541" data-color="Amaretto" title="Amaretto"></div>
-             <div class="box" style="background-color:#65340A" value="#65340A" data-color="Coco" title="Coco"></div>
-             <div class="box" style="background-color:#652310" value="#652310" data-color="Praline" title="Praline"></div>
-             <div class="box" style="background-color:#472203" value="#472203" data-color="Coffee" title="Coffee"></div>
-             <div class="box" style="background-color:#847055" value="#847055" data-color="Sienna" title="Sienna"></div>
-             <div class="box" style="background-color:#B7B3A9" value="#B7B3A9" data-color="LightGrey" title="LightGrey"></div>
-             <div class="box" style="background-color:#676560" value="#676560" data-color="DarkGrey" title="DarkGrey"></div>
-             <div class="box" style="background-color:#6F1E14" value="#6F1E14" data-color="DarkMahogany" title="DarkMahogany"></div>
-             <div class="box" style="background-color:#fff" value="#fff" data-color="white" title="white"></div>
-             <div class="box" style="background-color:#EAE5D9;font-size:11px;color:black;" value="#EAE5D9" data-color="Marble" title="Marble">TILE</div>
-           </div>
-         </div>
-       </li>
-       <li class="nav-item menu-items whenstairchoosed" id="stringers">
-        <a class="nav-link basiccolors" value="stringers" data-toggle="collapse" href="#stringerscolors" aria-expanded="false" aria-controls="ui-basic">
+    </div>
+
+    <button class="accordion"><span style="color:#6c7293">Colour Sections</span></button>
+    <div class="panel">
+      <li class="nav-item menu-items whenstairchoosed" id="treads" >
+        <a class="nav-link basiccolors" data-toggle="collapse" value="treads" href="#treadcolors" aria-expanded="false" aria-controls="ui-basic">
           <span class="menu-icon">
             <i class="mdi mdi-stairs"></i>
           </span>
-          <span class="menu-title">Stringers</span>
+          <span class="menu-title">Treads</span>
           <i class="menu-arrow"></i>
         </a>
-        <div class="collapse" id="stringerscolors">
-         <div id="container3" class="shadow-lg  colorcontainer rounded" style="background-color:#D6FFEF;">
+        <div class="collapse" id="treadcolors">
+         <div id="container1" class="shadow-lg  colorcontainer rounded" style="background-color:#D6FFEF;" >
            <div class="box" style="background-color:#000000" value="#000000" data-color="Black" title="Black"></div>
            <div class="box" style="background-color:#DDB28E" value="#DDB28E" data-color="Tan" title="Tan"></div>
            <div class="box" style="background-color:#D48541" value="#D48541" data-color="Amaretto" title="Amaretto"></div>
@@ -598,43 +539,47 @@ error_reporting(0);
            <div class="box" style="background-color:#B7B3A9" value="#B7B3A9" data-color="LightGrey" title="LightGrey"></div>
            <div class="box" style="background-color:#676560" value="#676560" data-color="DarkGrey" title="DarkGrey"></div>
            <div class="box" style="background-color:#6F1E14" value="#6F1E14" data-color="DarkMahogany" title="DarkMahogany"></div>
-           <div class="box" style="background-color:#fff" value="#fff" data-color="white" title="white"></div>
-           <div class="box" style="background-color:#EAE5D9;font-size:11px;color:black;" value="#EAE5D9" data-color="Marble" title="Marble">TILE</div>
+           <!--<div class="box" style="background-color:#815438" value="#815438" data-color="dark" title="dark"></div>
+           <div class="box" style="background-color:#B48463" value="#B48463" data-color="medium" title="medium"></div>
+           <div class="box" style="background-color:#caa472" value="#caa472" data-color="light" title="light"></div>-->
          </div>
        </div>
      </li>
-     <li class="nav-item menu-items whenstairchoosed">
-      <a class="nav-link basiccolors" value="walls"  data-toggle="collapse" href="#wallscolors" aria-expanded="false" aria-controls="ui-basic">
+     <li class="nav-item menu-items whenstairchoosed" id="risers">
+      <a class="nav-link basiccolors" value="risers" data-toggle="collapse" href="#riserscolors" aria-expanded="false" aria-controls="ui-basic">
         <span class="menu-icon">
-          <i class="mdi mdi-file-word-box"></i>
+          <i class="mdi mdi-stairs"></i>
         </span>
-        <span class="menu-title">Walls</span>
+        <span class="menu-title">Risers</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse" id="wallscolors">
-       <div id="container4" class="shadow-lg  colorcontainer rounded" style="background-color:#CACFD2;">
-         <div class="box" style="background-color:#F0F9DC" value="#F0F9DC" data-color="LightGreen" title="LightGreen"></div>
-         <div class="box" style="background-color:#FFFFFF" value="#FFFFFF" data-color="White" title="White"></div>
-         <div class="box" style="background-color:#FAF2D4" value="#FAF2D4" data-color="Beige" title="Beige"></div>
-         <div class="box" style="background-color:#EAC7AA" value="#EAC7AA" data-color="Tan" title="Tan"></div>
-         <div class="box" style="background-color:#FFFFD5" value="#FFFFD5" data-color="LightYellow" title="LightYellow"></div>
-         <div class="box" style="background-color:#C74535" value="#C74535" data-color="LightMahogany" title="LightMahogany"></div>
+      <div class="collapse" id="riserscolors">
+       <div id="container2" class="shadow-lg  colorcontainer rounded" style="background-color:#D6FFEF;">
+         <div class="box" style="background-color:#000000" value="#000000" data-color="Black" title="Black"></div>
+         <div class="box" style="background-color:#DDB28E" value="#DDB28E" data-color="Tan" title="Tan"></div>
+         <div class="box" style="background-color:#D48541" value="#D48541" data-color="Amaretto" title="Amaretto"></div>
+         <div class="box" style="background-color:#65340A" value="#65340A" data-color="Coco" title="Coco"></div>
+         <div class="box" style="background-color:#652310" value="#652310" data-color="Praline" title="Praline"></div>
+         <div class="box" style="background-color:#472203" value="#472203" data-color="Coffee" title="Coffee"></div>
+         <div class="box" style="background-color:#847055" value="#847055" data-color="Sienna" title="Sienna"></div>
          <div class="box" style="background-color:#B7B3A9" value="#B7B3A9" data-color="LightGrey" title="LightGrey"></div>
          <div class="box" style="background-color:#676560" value="#676560" data-color="DarkGrey" title="DarkGrey"></div>
-         <div class="box" style="background-color:#E4E3E1" value="#E4E3E1" data-color="orignal" title="orignal"></div>
+         <div class="box" style="background-color:#6F1E14" value="#6F1E14" data-color="DarkMahogany" title="DarkMahogany"></div>
+         <div class="box" style="background-color:#fff" value="#fff" data-color="white" title="white"></div>
+         <!--<div class="box" style="background-color:#EAE5D9;font-size:11px;color:black;" value="#EAE5D9" data-color="Marble" title="Marble">TILE</div>-->
        </div>
      </div>
    </li>
-   <li class="nav-item menu-items whenstairchoosed">
-    <a class="nav-link basiccolors" value="floor" data-toggle="collapse" href="#floorscolors" aria-expanded="false" aria-controls="ui-basic">
+   <li class="nav-item menu-items whenstairchoosed" id="stringers">
+    <a class="nav-link basiccolors" value="stringers" data-toggle="collapse" href="#stringerscolors" aria-expanded="false" aria-controls="ui-basic">
       <span class="menu-icon">
-        <i class="mdi mdi-checkbox-blank"></i>
+        <i class="mdi mdi-stairs"></i>
       </span>
-      <span class="menu-title">Floor</span>
+      <span class="menu-title">Stringers</span>
       <i class="menu-arrow"></i>
     </a>
-    <div class="collapse" id="floorscolors">
-     <div id="container5" class="shadow-lg  colorcontainer rounded" style="background-color:#D6FFEF;">
+    <div class="collapse" id="stringerscolors">
+     <div id="container3" class="shadow-lg  colorcontainer rounded" style="background-color:#D6FFEF;">
        <div class="box" style="background-color:#000000" value="#000000" data-color="Black" title="Black"></div>
        <div class="box" style="background-color:#DDB28E" value="#DDB28E" data-color="Tan" title="Tan"></div>
        <div class="box" style="background-color:#D48541" value="#D48541" data-color="Amaretto" title="Amaretto"></div>
@@ -645,25 +590,72 @@ error_reporting(0);
        <div class="box" style="background-color:#B7B3A9" value="#B7B3A9" data-color="LightGrey" title="LightGrey"></div>
        <div class="box" style="background-color:#676560" value="#676560" data-color="DarkGrey" title="DarkGrey"></div>
        <div class="box" style="background-color:#6F1E14" value="#6F1E14" data-color="DarkMahogany" title="DarkMahogany"></div>
-       <div class="box" style="background-color:#EAE5D9;font-size:11px;color:black;" value="#EAE5D9" id="tilefloor" data-color="Marble" title="Marble">TILE</div>
-       <div class="box" style="background-color:#815438" value="#815438" data-color="dark" title="dark"></div>
-       <div class="box" style="background-color:#B48463" value="#B48463" data-color="medium" title="medium"></div>
-       <div class="box" style="background-color:#caa472" value="#caa472" data-color="light" title="light"></div>
+       <div class="box" style="background-color:#fff" value="#fff" data-color="white" title="white"></div>
+       <!--<div class="box" style="background-color:#EAE5D9;font-size:11px;color:black;" value="#EAE5D9" data-color="Marble" title="Marble">TILE</div>-->
      </div>
    </div>
  </li>
- <li class="nav-item menu-items whenstairchoosed" id="firststep">
+ <li class="nav-item menu-items whenstairchoosed">
+  <a class="nav-link basiccolors" value="walls"  data-toggle="collapse" href="#wallscolors" aria-expanded="false" aria-controls="ui-basic">
+    <span class="menu-icon">
+      <i class="mdi mdi-file-word-box"></i>
+    </span>
+    <span class="menu-title">Walls</span>
+    <i class="menu-arrow"></i>
+  </a>
+  <div class="collapse" id="wallscolors">
+   <div id="container4" class="shadow-lg  colorcontainer rounded" style="background-color:#CACFD2;">
+     <!--<div class="box" style="background-color:#F0F9DC" value="#F0F9DC" data-color="LightGreen" title="LightGreen"></div>-->
+     <div class="box" style="background-color:#FFFFFF" value="#FFFFFF" data-color="White" title="White"></div>
+     <div class="box" style="background-color:#FAF2D4" value="#FAF2D4" data-color="Beige" title="Beige"></div>
+     <div class="box" style="background-color:#EAC7AA" value="#EAC7AA" data-color="Tan" title="Tan"></div>
+     <!--<div class="box" style="background-color:#FFFFD5" value="#FFFFD5" data-color="LightYellow" title="LightYellow"></div>-->
+     <div class="box" style="background-color:#C74535" value="#C74535" data-color="LightMahogany" title="LightMahogany"></div>
+     <div class="box" style="background-color:#B7B3A9" value="#B7B3A9" data-color="LightGrey" title="LightGrey"></div>
+     <div class="box" style="background-color:#676560" value="#676560" data-color="DarkGrey" title="DarkGrey"></div>
+     <div class="box" style="background-color:#E4E3E1" value="#E4E3E1" data-color="orignal" title="orignal"></div>
+   </div>
+ </div>
+</li>
+<li class="nav-item menu-items whenstairchoosed">
+  <a class="nav-link basiccolors" value="floor" data-toggle="collapse" href="#floorscolors" aria-expanded="false" aria-controls="ui-basic">
+    <span class="menu-icon">
+      <i class="mdi mdi-checkbox-blank"></i>
+    </span>
+    <span class="menu-title">Floor</span>
+    <i class="menu-arrow"></i>
+  </a>
+  <div class="collapse" id="floorscolors">
+   <div id="container5" class="shadow-lg  colorcontainer rounded" style="background-color:#D6FFEF;">
+     <div class="box" style="background-color:#000000" value="#000000" data-color="Black" title="Black"></div>
+     <div class="box" style="background-color:#DDB28E" value="#DDB28E" data-color="Tan" title="Tan"></div>
+     <div class="box" style="background-color:#D48541" value="#D48541" data-color="Amaretto" title="Amaretto"></div>
+     <div class="box" style="background-color:#65340A" value="#65340A" data-color="Coco" title="Coco"></div>
+     <div class="box" style="background-color:#652310" value="#652310" data-color="Praline" title="Praline"></div>
+     <div class="box" style="background-color:#472203" value="#472203" data-color="Coffee" title="Coffee"></div>
+     <div class="box" style="background-color:#847055" value="#847055" data-color="Sienna" title="Sienna"></div>
+     <div class="box" style="background-color:#B7B3A9" value="#B7B3A9" data-color="LightGrey" title="LightGrey"></div>
+     <div class="box" style="background-color:#676560" value="#676560" data-color="DarkGrey" title="DarkGrey"></div>
+     <div class="box" style="background-color:#6F1E14" value="#6F1E14" data-color="DarkMahogany" title="DarkMahogany"></div>
+     <div class="box" style="background-color:#EAE5D9;font-size:11px;color:black;" value="#EAE5D9" id="tilefloor" data-color="Marble" title="Marble">TILE</div>
+     <!--<div class="box" style="background-color:#815438" value="#815438" data-color="dark" title="dark"></div>
+     <div class="box" style="background-color:#B48463" value="#B48463" data-color="medium" title="medium"></div>
+     <div class="box" style="background-color:#caa472" value="#caa472" data-color="light" title="light"></div>-->
+   </div>
+ </div>
+</li>
+<li class="nav-item menu-items whenstairchoosed" id="firststep">
   <a class="nav-link firststepvbtn" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic">
     <span class="menu-icon">
       <i class="mdi mdi-crop-landscape"></i>
     </span>
-    <span class="menu-title">First Step</span>
+    <span class="menu-title">First Step Options</span>
     <i class="menu-arrow"></i>
   </a>
   <div class="collapse" id="ui-basic1">
     <ul class="nav flex-column sub-menu">
-      <li class="nav-item"> <a class="nav-link firststepv" value="1" href="#">First Squre Step</a></li>
-      <li class="nav-item"> <a class="nav-link firststepv" value="2"  href="#">First Round Step</a></li>
+      <li class="nav-item"> <a class="nav-link firststepv" value="1" href="#">First Step Square</a></li>
+      <li class="nav-item"> <a class="nav-link firststepv" value="2"  href="#">First Step Round</a></li>
     </ul>
   </div>
 </li>
@@ -673,11 +665,11 @@ error_reporting(0);
 <div class="panel">
 
   <li class="nav-item menu-items whenstairchoosed" id="mybalu">
-    <a class="nav-link designtypeddbtn" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic" style="">
+    <a class="nav-link designtypeddbtn" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic">
       <span class="menu-icon">
         <i class="mdi mdi-laptop"></i>
       </span>
-      <span class="menu-title ">Choose your Balustrade</span>
+      <span class="menu-title ">Select Handrail Design</span>
       <i class="menu-arrow"></i>
     </a>
     <div class="collapse" id="ui-basic2">
@@ -806,9 +798,9 @@ error_reporting(0);
       <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" /></a>
     </div>
     <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-      <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+      <!--<button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
         <span class="mdi mdi-menu"></span>
-      </button>
+      </button> -->
       <ul class="navbar-nav navbar-nav-right">
         <li class="nav-item dropdown border-left">
           <a class="nav-link count-indicator dropdown-toggle" id="zoom" href="#" data-toggle="dropdown">
@@ -825,12 +817,37 @@ error_reporting(0);
             <i class="mdi mdi-magnify-plus zoom"></i>
           </a>
         </li>
-        <li class="nav-item dropdown border-left">
-          <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-            <i class="mdi mdi-web"></i>
+        <li class="nav-item dropdown">
+          <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+            <div class="navbar-profile">
+
+              <?php if(strlen($_SESSION['login']))
+              {
+
+                if(strlen($_SESSION['avatar']))
+                {   
+                  ?> 
+                  <img class="img-xs rounded-circle" src="assets/images/avatar/<?php echo htmlentities($_SESSION['avatar']);?>.png" alt="">
+                <?php } ?>
+                <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo htmlentities($_SESSION['username']);?></p>
+                <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+              <?php } else { ?>
+                <a class="nav-link" id="" style="padding:0;margin-top:-29px"  href="login.php">
+
+                  <div class="preview-item-content">
+                    <p class="preview-subject mb-1">Login/Signup</p>
+                  </div>
+                </a>
+
+
+              <?php } ?>
+              
+            </div>
           </a>
-          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-            <h6 class="p-3 mb-0">Browse Pages</h6>
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
+           <?php if(strlen($_SESSION['login']))
+           { ?>
+            <h6 class="p-3 mb-0" data-bs-toggle="modal" data-bs-target="#settings" >Profile</h6>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item preview-item" href="recomendeddesign.php"  id="rdes" >
               <div class="preview-thumbnail">
@@ -843,6 +860,8 @@ error_reporting(0);
                 <p class="text-muted ellipsis mb-0">Recommended by Admin</p>
               </div>
             </a>
+            
+            <div class="dropdown-divider"></div>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item preview-item"  href="customerDesigns.php" id="cdes"  >
               <div class="preview-thumbnail">
@@ -855,6 +874,7 @@ error_reporting(0);
                 <p class="text-muted ellipsis mb-0">Saved by other users </p>
               </div>
             </a>
+            
             <?php if(strlen($_SESSION['login']))
             {   ?>
               <div class="dropdown-divider"></div>
@@ -871,35 +891,19 @@ error_reporting(0);
               </a>
             <?php } ?>
             <div class="dropdown-divider"></div>
-            <p class="p-3 mb-0 text-center">StairsSteps Designs</p>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
-            <div class="navbar-profile">
-              <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
-              <?php if(strlen($_SESSION['login']))
-              {   ?>
-                <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo htmlentities($_SESSION['username']);?></p>
-              <?php } ?>
-              <i class="mdi mdi-menu-down d-none d-sm-block"></i>
-            </div>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-           <?php if(strlen($_SESSION['login']))
-           { ?>
-            <h6 class="p-3 mb-0" data-bs-toggle="modal" data-bs-target="#settings" >Profile</h6>
-            <div class="dropdown-divider"></div>
             <a class="dropdown-item preview-item"  href="profilesettings.php">
               <div class="preview-thumbnail">
                 <div class="preview-icon bg-dark rounded-circle">
                   <i class="mdi mdi-settings text-success"></i>
                 </div>
               </div>
+              
               <div class="preview-item-content">
+
                 <p class="preview-subject mb-1" >Settings</p>
               </div>
             </a>
+            
             <div class="dropdown-divider"></div>
             <a class="dropdown-item preview-item" href="includes/logout.php">
               <div class="preview-thumbnail">
@@ -911,15 +915,10 @@ error_reporting(0);
                 <p class="preview-subject mb-1" >Log out</p>
               </div>
             </a>
-          <?php } else 	  if(strlen($_SESSION['login'])==0)
+          <?php } else    if(strlen($_SESSION['login'])==0)
           { ?>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item preview-item" id="mdes"  href="login.php">
-
-              <div class="preview-item-content">
-                <p class="preview-subject mb-1">Login/Signup</p>
-              </div>
-            </a>
+            
           <?php } ?>
         </div>
       </li>
@@ -980,7 +979,7 @@ error_reporting(0);
         </a>
 
 
-        <nav class="navbar navbarmag">
+        <!--<nav class="navbar navbarmag">
           <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
             <ul class="navbar-nav navbar-nav-right">
               <li class="nav-item dropdown border-left" style="border-left: 1px solid #191c24 !important;">
@@ -1000,7 +999,7 @@ error_reporting(0);
               </li>
             </ul>
           </div>
-        </nav>
+        </nav>-->
 
 
         <nav class="sidebar d-print-none sidebar-offcanvas" id="sidebar" style="">
@@ -1032,6 +1031,15 @@ error_reporting(0);
           <i class="mdi mdi-database-plus"></i>
         </span>
         <span class="menu-title"><button type="button" id="savedesign_btn" class="btn btn-danger btn-fw">Save Design</button></span>
+      </a>
+    </li>
+
+    <li class="nav-item menu-items whenstairchoosed">
+      <a class="nav-link" href="#">
+        <span class="menu-icon">
+          <i class="mdi mdi-share-variant"></i>
+        </span>
+        <span class="menu-title"><button type="button"  class="btn btn-success btn-fw sharer" id="s<?php echo $thisid = $_GET['user_design'];?>" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Share Design</button></span>
       </a>
     </li>
           <!--li class="nav-item menu-items whenstairchoosed">
@@ -1094,10 +1102,37 @@ error_reporting(0);
   </div>
 </div>
 <!-- container-scroller -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Share Design with others</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <?php include "includes/sharedesign.php"; ?>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" >OK</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- plugins:js -->
 <script src="assets/vendors/js/vendor.bundle.base.js"></script>
 <!-- endinject -->
 <!-- Plugin js for this page -->
+<script src="assets/vendors/chart.js/Chart.min.js"></script>
+<script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
+<script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+<script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
 <!-- End plugin js for this page -->
 <!-- inject:js -->
 <script src="assets/js/off-canvas.js"></script>
@@ -1798,8 +1833,8 @@ if (ww < 914) {
 
           }
 									   //alert(makeNewurl);
-                     let path=encodeURI(makeNewurl);
-                     $("#"+postid+"h").load(path, function(response, status, xhr){
+                    let path=encodeURI(makeNewurl);
+                    $("#"+postid+"h").load(path, function(response, status, xhr){
 
                       if(status=="error"){
                         $.ambiance({
@@ -1811,7 +1846,7 @@ if (ww < 914) {
                         document.getElementById(postid+"h").setAttribute('data-url', makeNewurl);
                       }
                     });
-                   }else{
+                  }else{
                     $.ambiance({
                       message:"Sorry! You cannot change head color here.",
                       type:"error",
@@ -1833,10 +1868,10 @@ if (ww < 914) {
 
 		 //  document.getElementById("plant_reflection").setAttribute('data-url', thisrurl);
 
-     cpath=encodeURI(thisurl);
-     $("#maindiv #floor").load(cpath, function(response, status, xhr){
+    cpath=encodeURI(thisurl);
+    $("#maindiv #floor").load(cpath, function(response, status, xhr){
 
-       if(status=="error"){
+     if(status=="error"){
              // console.log($("#"+droptarget).html());
              $.ambiance({
                message:"Sorry! You cannot change this color here.",
@@ -1850,12 +1885,12 @@ if (ww < 914) {
         });
 
 
-   }else   if(selectedid=="walls"){
-     let wallurl="";
+  }else   if(selectedid=="walls"){
+   let wallurl="";
 
-     wallurl="Balcony/WALL/WALL "+colorname+".svg";
+   wallurl="Balcony/WALL/WALL "+colorname+".svg";
 
-     let cpath=encodeURI(wallurl);
+   let cpath=encodeURI(wallurl);
       // 
       $("#maindiv #wall").load(cpath, function(response, status, xhr){
 
@@ -1908,8 +1943,8 @@ if (ww < 914) {
 
           }
 									   //alert(makeNewurl);
-                     let path=encodeURI(makeNewurl);
-                     $("#"+postid+"h").load(path, function(response, status, xhr){
+                    let path=encodeURI(makeNewurl);
+                    $("#"+postid+"h").load(path, function(response, status, xhr){
 
                       if(status=="error"){
                         $.ambiance({
@@ -1921,7 +1956,7 @@ if (ww < 914) {
                         document.getElementById(postid+"h").setAttribute('data-url', makeNewurl);
                       }
                     });
-                   }else{
+                  }else{
                     $.ambiance({
                       message:"Sorry! You cannot change head color here.",
                       type:"error",
@@ -1967,9 +2002,9 @@ if (ww < 914) {
        thisr3url="Stairs with Landing/ACCESSORIES 1/SHADOW "+colorname+".svg";
        cpath=encodeURI(thisurl);
     	 //  alert(thisurl);
-      $("#maindiv #floor").load(cpath, function(response, status, xhr){
+       $("#maindiv #floor").load(cpath, function(response, status, xhr){
 
-       if(status=="error"){
+         if(status=="error"){
                  // console.log($("#"+droptarget).html());
                  $.ambiance({
                    message:"Sorry! You cannot change this color here.",
@@ -1982,15 +2017,15 @@ if (ww < 914) {
               }
             });
 
-      let crpath="";
-      let cr2path="";
-      let cr3path="";
-      crpath=encodeURI(thisrurl);
-      cr2path=encodeURI(thisr2url);
-      cr3path=encodeURI(thisr3url);
-      $("#maindiv #first_step_shadow").load(crpath, function(response, status, xhr){
+       let crpath="";
+       let cr2path="";
+       let cr3path="";
+       crpath=encodeURI(thisrurl);
+       cr2path=encodeURI(thisr2url);
+       cr3path=encodeURI(thisr3url);
+       $("#maindiv #first_step_shadow").load(crpath, function(response, status, xhr){
 
-       if(status=="error"){
+         if(status=="error"){
                  // console.log($("#"+droptarget).html());
                  $.ambiance({
                    message:"Sorry! You cannot change this reflaction here.",
@@ -2003,9 +2038,9 @@ if (ww < 914) {
               }
             });
 
-      $("#maindiv #second_step_reflection").load(cr2path, function(response, status, xhr){
+       $("#maindiv #second_step_reflection").load(cr2path, function(response, status, xhr){
 
-       if(status=="error"){
+         if(status=="error"){
                  // console.log($("#"+droptarget).html());
                  $.ambiance({
                    message:"Sorry! You cannot change this reflaction here.",
@@ -2017,9 +2052,9 @@ if (ww < 914) {
                 document.getElementById("second_step_reflection").setAttribute('data-url', thisr2url);
               }
             });
-      $("#maindiv #table_shadow").load(cr3path, function(response, status, xhr){
+       $("#maindiv #table_shadow").load(cr3path, function(response, status, xhr){
 
-       if(status=="error"){
+         if(status=="error"){
                  // console.log($("#"+droptarget).html());
                  $.ambiance({
                    message:"Sorry! You cannot change this reflaction here.",
@@ -2031,7 +2066,7 @@ if (ww < 914) {
                 document.getElementById("table_shadow").setAttribute('data-url', thisr3url);
               }
             });
-    }else if(selectedid=="treads"){
+     }else if(selectedid=="treads"){
 
       let thisurl2="";
       firststeptreadcolor=colorname;
@@ -2383,9 +2418,9 @@ if (ww < 914) {
      }
      cpath=encodeURI(thisurl);
     	 //  alert(thisurl);
-      $("#maindiv #floor").load(cpath, function(response, status, xhr){
+       $("#maindiv #floor").load(cpath, function(response, status, xhr){
 
-       if(status=="error"){
+         if(status=="error"){
                  // console.log($("#"+droptarget).html());
                  $.ambiance({
                    message:"Sorry! You cannot change this color here.",
@@ -2398,17 +2433,17 @@ if (ww < 914) {
               }
             });
 
-      let crpath="";
-      let cr2path="";
-      let cr3path="";
-      let cr4path="";
-      crpath=encodeURI(thisrurl);
-      cr2path=encodeURI(thisr2url);
-      cr3path=encodeURI(thisr3url);
-      cr4path=encodeURI(thisr4url);
-      $("#maindiv #table_shadow").load(cr4path, function(response, status, xhr){
+       let crpath="";
+       let cr2path="";
+       let cr3path="";
+       let cr4path="";
+       crpath=encodeURI(thisrurl);
+       cr2path=encodeURI(thisr2url);
+       cr3path=encodeURI(thisr3url);
+       cr4path=encodeURI(thisr4url);
+       $("#maindiv #table_shadow").load(cr4path, function(response, status, xhr){
 
-       if(status=="error"){
+         if(status=="error"){
                  // console.log($("#"+droptarget).html());
                  $.ambiance({
                    message:"Sorry! You cannot change this reflaction here.",
@@ -2420,9 +2455,9 @@ if (ww < 914) {
                 document.getElementById("table_shadow").setAttribute('data-url', thisr4url);
               }
             });
-      $("#maindiv #first_step_shadow").load(crpath, function(response, status, xhr){
+       $("#maindiv #first_step_shadow").load(crpath, function(response, status, xhr){
 
-       if(status=="error"){
+         if(status=="error"){
                  // console.log($("#"+droptarget).html());
                  $.ambiance({
                    message:"Sorry! You cannot change this reflaction here.",
@@ -2434,9 +2469,9 @@ if (ww < 914) {
                 document.getElementById("first_step_shadow").setAttribute('data-url', thisrurl);
               }
             });
-      $("#maindiv #first_step_reflaction").load(cr3path, function(response, status, xhr){
+       $("#maindiv #first_step_reflaction").load(cr3path, function(response, status, xhr){
 
-       if(status=="error"){
+         if(status=="error"){
                  // console.log($("#"+droptarget).html());
                  $.ambiance({
                    message:"Sorry! You cannot change this reflaction here.",
@@ -2449,9 +2484,9 @@ if (ww < 914) {
               }
             });
 
-      $("#maindiv #second_step_reflection").load(cr2path, function(response, status, xhr){
+       $("#maindiv #second_step_reflection").load(cr2path, function(response, status, xhr){
 
-       if(status=="error"){
+         if(status=="error"){
                  // console.log($("#"+droptarget).html());
                  $.ambiance({
                    message:"Sorry! You cannot change this reflaction here.",
@@ -2463,7 +2498,7 @@ if (ww < 914) {
                 document.getElementById("second_step_reflection").setAttribute('data-url', thisr2url);
               }
             });
-    }else if(selectedid=="treads"){
+     }else if(selectedid=="treads"){
 
       let thisurl2="";
       firststeptreadcolor=colorname;
@@ -2743,7 +2778,7 @@ if (ww < 914) {
           }else if(designvl=='4'){
             var firstpori=firststepvalue;
 		 // alert(firstpori);
-     if(selectedid=="headsforwhite"){
+    if(selectedid=="headsforwhite"){
       let thisurl="";
       let cpath="";
 			//alert(colorname);
@@ -2815,9 +2850,9 @@ if (ww < 914) {
      }
      cpath=encodeURI(thisurl);
     	 //  alert(thisurl);
-      $("#maindiv #floor").load(cpath, function(response, status, xhr){
+       $("#maindiv #floor").load(cpath, function(response, status, xhr){
 
-       if(status=="error"){
+         if(status=="error"){
                  // console.log($("#"+droptarget).html());
                  $.ambiance({
                    message:"Sorry! You cannot change this color here.",
@@ -2830,7 +2865,7 @@ if (ww < 914) {
               }
             });
 
-    }else if(selectedid=="treads"){
+     }else if(selectedid=="treads"){
 
       let thisurl2="";
       firststeptreadcolor=colorname;
@@ -3429,8 +3464,8 @@ $("#designcolorvalues").on('click', '.box2', function(){
          $('#designcategory').css('display', 'none');
 								//alert(data);
 										 //$('select[name=name] option:eq(1)').attr('selected', 'selected');
-                    $('.designcategory').first().click();
-                    var checkit= $('.designcategory').first();
+                     $('.designcategory').first().click();
+                     var checkit= $('.designcategory').first();
 										//alert(designtypeid);
 										var catval=checkit.attr('value');
 										designcategoryidtext=checkit.html();
@@ -3550,19 +3585,19 @@ $("#designcategoryvalues").on('click', '.designcategory', function(){
      if(designmaterial=="h1" && bgid=='2' && fstep=='2' || designmaterial=="h1" && bgid=='3' && fstep=='2'  || designmaterial=="h1" && bgid=='4' && fstep=='2' ){
 				 // check newel
 
-        if(bgid=='4'){
-         var nl=document.getElementById('newelpost1').getAttribute('data-url');
-       }else{
-         var nl=document.getElementById('newelpost6').getAttribute('data-url');
-       }
-       if(nl){
-         let spliturl=nl.split("/");
-         let checkcolor=spliturl[3];
-         let checkpost=spliturl[4];
+         if(bgid=='4'){
+           var nl=document.getElementById('newelpost1').getAttribute('data-url');
+         }else{
+           var nl=document.getElementById('newelpost6').getAttribute('data-url');
+         }
+         if(nl){
+           let spliturl=nl.split("/");
+           let checkcolor=spliturl[3];
+           let checkpost=spliturl[4];
 
 
-         if(checkpost=="IV B HEADLESS NEWEL POST WOOD" || checkpost=="HEADLESS NEWEL POST"){
-          if(ctytxt=="WOOD HANDRAIL STRAIGHT FRONT" || ctytxt=="VI A-1 WOOD STRAIGHT HANDRAIL" || ctytxt=="STRAIGHT HANDRAIL"){
+           if(checkpost=="IV B HEADLESS NEWEL POST WOOD" || checkpost=="HEADLESS NEWEL POST"){
+            if(ctytxt=="WOOD HANDRAIL STRAIGHT FRONT" || ctytxt=="VI A-1 WOOD STRAIGHT HANDRAIL" || ctytxt=="STRAIGHT HANDRAIL"){
 									  //should not process further 
                     alert("You can't add this category until you have FULL NEWEL POST");
                     checkcategory=1;
@@ -3581,11 +3616,11 @@ $("#designcategoryvalues").on('click', '.designcategory', function(){
            }
            else  if(designmaterial=="n1" && bgid=='2' && fstep=='2'  || designmaterial=="n1" && bgid=='3' && fstep=='2' || designmaterial=="n1" && bgid=='4' && fstep=='2'){
 				 // check handrail
-        var vhand=document.getElementById('handrailfrontV').getAttribute('data-url');
-        var shand=document.getElementById('handrailfront').getAttribute('data-url');
+         var vhand=document.getElementById('handrailfrontV').getAttribute('data-url');
+         var shand=document.getElementById('handrailfront').getAttribute('data-url');
 
-        if(vhand){
-         if(ctytxt=="IV B BOTTOM NEWEL POST" || ctytxt=="BOTTOM NEWEL POST"){
+         if(vhand){
+           if(ctytxt=="IV B BOTTOM NEWEL POST" || ctytxt=="BOTTOM NEWEL POST"){
 						  //should not process further 
               alert("You can't add this category until you have STRAIGHT HANDRAIL");
               checkcategory=1;
@@ -3719,7 +3754,7 @@ $("#designsubcategoryvalues").on('click', '.designsubcategory', function(){
                       // console.log("balustrade "+balustradeName+" typename "+typename);
 
 						 // alert("before check b "+balustradeName+" type "+typename+" id "+stairdesi);
-            if (balustradeName=="Spindle Design options" && typename=="NEWEL" && stairdesi=='1') {
+             if (balustradeName=="Spindle Design options" && typename=="NEWEL" && stairdesi=='1') {
               $("#tnewelpost2").hide();
               $("#tnewelpost3").hide();
             }else if (balustradeName=="Spindle Design options" && typename=="NEWEL" && stairdesi=='4' && cty=="BOTTOM NEWEL POST") {
@@ -3868,9 +3903,9 @@ function dropit(parttype){
 
   var category=designcategoryidtext;
 							 // alert(category);
-              var typename=parttype;
+               var typename=parttype;
 
-              var subcategory="";
+               var subcategory="";
                              // var subcategory=document.getElementById("designsubcategory").selectedOptions[0].text;
                              var subcategoryid=designsubcategoryid;
                              $.ajax({
@@ -4401,8 +4436,8 @@ function dropit(parttype){
                                     document.getElementById(droptarget).setAttribute('data-color', colorname);
                                     document.getElementById(droptarget).setAttribute('data-url', thisurl);
 							     // alert(thisurl);
-                }
-              });
+                 }
+               });
                               } catch (error) {
                                 $.ambiance({
                                   message:"Sorry! You cannot place this newel post here.",
@@ -4487,9 +4522,9 @@ function dropit(parttype){
 							//alert(svgurl);
              if(urlforbp){
 								 // alert(svgurl);
-                 let spliturl=urlforbp.split("/");
-                 let spindlecategory=spliturl[4];
-                 if(spindlecategory != "IV B HEADLESS NEWEL POST WOOD" ){
+                let spliturl=urlforbp.split("/");
+                let spindlecategory=spliturl[4];
+                if(spindlecategory != "IV B HEADLESS NEWEL POST WOOD" ){
                   let svgurl2=document.getElementById("treads").getAttribute('data-url');
                   if(svgurl2 != null){
 
@@ -4503,9 +4538,9 @@ function dropit(parttype){
                   temp1=temp1[1]; 
 
 									 // alert(temp1);
-                  let spindlesshadow="Stairs with Landing/"+spindlecategory+"/SHADOW "+temp1+".svg";
-                  let path2=encodeURI(spindlesshadow);
-                  $("#bottom_newel_shadow").load(path2, function(response, status, xhr){
+                   let spindlesshadow="Stairs with Landing/"+spindlecategory+"/SHADOW "+temp1+".svg";
+                   let path2=encodeURI(spindlesshadow);
+                   $("#bottom_newel_shadow").load(path2, function(response, status, xhr){
 
                     if(status=="error"){
                       $.ambiance({
@@ -4517,9 +4552,9 @@ function dropit(parttype){
                       document.getElementById("bottom_newel_shadow").setAttribute('data-url', spindlesshadow);
                     }
                   });
-                }
-              }	
-              if(svgurluf !="" && svgurlnpp !=""){
+                 }
+               }	
+               if(svgurluf !="" && svgurlnpp !=""){
 								//  alert(svgurlu);
                let spliturl=svgurluf.split("/");
                let spindlecategory=spliturl[4];
@@ -4532,9 +4567,9 @@ function dropit(parttype){
                 colorname="LightGrey";
               }else{}
 									 // alert(temp1);
-                  let spindlesshadow="Stairs with Landing/"+spindlecategory+"/SHADOW2 "+colorname+".svg";
-                  let path2=encodeURI(spindlesshadow);
-                  $("#footrail_shadow2").load(path2, function(response, status, xhr){
+                   let spindlesshadow="Stairs with Landing/"+spindlecategory+"/SHADOW2 "+colorname+".svg";
+                   let path2=encodeURI(spindlesshadow);
+                   $("#footrail_shadow2").load(path2, function(response, status, xhr){
 
                     if(status=="error"){
                       $.ambiance({
@@ -4551,8 +4586,8 @@ function dropit(parttype){
 
 
 
-                }
-                if(svgurluhnd !="" && svgurlnpp !="" || svgurluhnd2 !="" && svgurlnpp !=""){
+                 }
+                 if(svgurluhnd !="" && svgurlnpp !="" || svgurluhnd2 !="" && svgurlnpp !=""){
 								//  alert(svgurlu);
                let spliturl=svgurlnpp.split("/");
                let spindlecategory=spliturl[4];
@@ -4565,9 +4600,9 @@ function dropit(parttype){
                 colorname="LightGrey";
               }else{}
 									 // alert(temp1);
-                  let spindlesshadow="Stairs with Landing/"+spindlecategory+"/SHADOW2 "+colorname+".svg";
-                  let path2=encodeURI(spindlesshadow);
-                  $("#upper_newel_shadow2").load(path2, function(response, status, xhr){
+                   let spindlesshadow="Stairs with Landing/"+spindlecategory+"/SHADOW2 "+colorname+".svg";
+                   let path2=encodeURI(spindlesshadow);
+                   $("#upper_newel_shadow2").load(path2, function(response, status, xhr){
 
                     if(status=="error"){
                       $.ambiance({
@@ -4584,8 +4619,8 @@ function dropit(parttype){
 
 
 
-                }
-              }else if (typename=="NEWEL" && designid=='3') {
+                 }
+               }else if (typename=="NEWEL" && designid=='3') {
                 let svgurl="";  
                 let svgurlu="";  
                 $('.newelparthead').html("");
@@ -4955,8 +4990,8 @@ function dropit(parttype){
                                     document.getElementById(droptarget).setAttribute('data-color', colorname);
                                     document.getElementById(droptarget).setAttribute('data-url', thisurl);
 							     // alert(thisurl);
-                }
-              });
+                 }
+               });
                               } catch (error) {
                                 $.ambiance({
                                   message:"Sorry! You cannot place this newel post here.",
@@ -5031,9 +5066,9 @@ function dropit(parttype){
 							//alert(svgurl);
              if(svgurl){
 								 // alert(svgurl);
-                 let spliturl=svgurl.split("/");
-                 let spindlecategory=spliturl[4];
-                 if(spindlecategory != "IV B HEADLESS NEWEL POST WOOD" ){
+                let spliturl=svgurl.split("/");
+                let spindlecategory=spliturl[4];
+                if(spindlecategory != "IV B HEADLESS NEWEL POST WOOD" ){
                   let svgurl2=document.getElementById("treads").getAttribute('data-url');
                   if(svgurl2 != null){
 
@@ -5053,9 +5088,9 @@ function dropit(parttype){
                     colorname="Sienna";
                   }
 									 // alert(temp1);
-                  let spindlesshadow="Stairs with Triangles/"+spindlecategory+"/SHADOW "+temp1+".svg";
-                  let path2=encodeURI(spindlesshadow);
-                  $("#bottom_newel_shadow").load(path2, function(response, status, xhr){
+                   let spindlesshadow="Stairs with Triangles/"+spindlecategory+"/SHADOW "+temp1+".svg";
+                   let path2=encodeURI(spindlesshadow);
+                   $("#bottom_newel_shadow").load(path2, function(response, status, xhr){
 
                     if(status=="error"){
                       $.ambiance({
@@ -5067,9 +5102,9 @@ function dropit(parttype){
                       document.getElementById("bottom_newel_shadow").setAttribute('data-url', spindlesshadow);
                     }
                   });
-                }
-              }	 
-              if(svgurlu ==""){
+                 }
+               }	 
+               if(svgurlu ==""){
                 svgurlu=document.getElementById("newelpost2").getAttribute('data-url');
               }
               if(svgurlu){
@@ -5096,9 +5131,9 @@ function dropit(parttype){
                 colorname="Sienna";
               }
 									 // alert(temp1);
-                  let spindlesshadow="Stairs with Triangles/"+spindlecategory+"/SHADOW "+temp1+".svg";
-                  let path2=encodeURI(spindlesshadow);
-                  $("#upper_newel_shadow").load(path2, function(response, status, xhr){
+                   let spindlesshadow="Stairs with Triangles/"+spindlecategory+"/SHADOW "+temp1+".svg";
+                   let path2=encodeURI(spindlesshadow);
+                   $("#upper_newel_shadow").load(path2, function(response, status, xhr){
 
                     if(status=="error"){
                       $.ambiance({
@@ -5111,11 +5146,11 @@ function dropit(parttype){
                     }
                   });
 
-                  let checkfsvgurl=document.getElementById("handrailfront").getAttribute('data-url');
-                  let checkvsvgurl=document.getElementById("handrailfrontV").getAttribute('data-url');
+                   let checkfsvgurl=document.getElementById("handrailfront").getAttribute('data-url');
+                   let checkvsvgurl=document.getElementById("handrailfrontV").getAttribute('data-url');
 									 // alert(checkfsvgurl);
 									 // alert(checkvsvgurl);
-                   if(checkfsvgurl !="" || checkvsvgurl !=""){
+                  if(checkfsvgurl !="" || checkvsvgurl !=""){
                     let spindlesshadow2="Stairs with Triangles/"+spindlecategory+"/SHADOW2 "+colorname+".svg";
                     let path22=encodeURI(spindlesshadow2);
                     $("#upper_newel_shadow2").load(path22, function(response, status, xhr){
@@ -5160,8 +5195,8 @@ function dropit(parttype){
                                     document.getElementById(droptarget).setAttribute('data-color', colorname);
                                     document.getElementById(droptarget).setAttribute('data-url', thisurl);
 							     // alert(thisurl);
-                }
-              });
+                 }
+               });
                               } catch (error) {
                                 $.ambiance({
                                   message:"Sorry! You cannot place this newel post here.",
@@ -5223,9 +5258,9 @@ function dropit(parttype){
               temp1=temp1[1]; 
 
 									 // alert(temp1);
-                  let spindlesshadow="Stairs with Landing/"+spindlecategory+"/SHADOW "+temp1+".svg";
-                  let path2=encodeURI(spindlesshadow);
-                  $("#footrail_shadow").load(path2, function(response, status, xhr){
+                   let spindlesshadow="Stairs with Landing/"+spindlecategory+"/SHADOW "+temp1+".svg";
+                   let path2=encodeURI(spindlesshadow);
+                   $("#footrail_shadow").load(path2, function(response, status, xhr){
 
                     if(status=="error"){
                       $.ambiance({
@@ -5238,9 +5273,9 @@ function dropit(parttype){
                     }
                   });
 
-                  let svgurlnp=document.getElementById("newelpost2").getAttribute('data-url');
+                   let svgurlnp=document.getElementById("newelpost2").getAttribute('data-url');
 
-                  if(svgurlnp){
+                   if(svgurlnp){
 								//  alert(svgurlu);
                let spliturl=svgurlnp.split("/");
                let spindlecolor=spliturl[3];
@@ -5253,9 +5288,9 @@ function dropit(parttype){
                 spindlecolor="LightGrey";
               }else{}
 									 // alert(temp1);
-                  let spindlesshadow="Stairs with Landing/"+spindlecategory+"/SHADOW2 "+spindlecolor+".svg";
-                  let path2=encodeURI(spindlesshadow);
-                  $("#footrail_shadow2").load(path2, function(response, status, xhr){
+                   let spindlesshadow="Stairs with Landing/"+spindlecategory+"/SHADOW2 "+spindlecolor+".svg";
+                   let path2=encodeURI(spindlesshadow);
+                   $("#footrail_shadow2").load(path2, function(response, status, xhr){
 
                     if(status=="error"){
                       $.ambiance({
@@ -5270,10 +5305,10 @@ function dropit(parttype){
 
 
 
-                } 
+                 } 
 
-              }
-            }else if (cy=='VI A-1 WOOD STRAIGHT HANDRAIL') {
+               }
+             }else if (cy=='VI A-1 WOOD STRAIGHT HANDRAIL') {
               let droptarget="handrailfront";
               let targetvalue="STRAIGHT HANDRAIL";
               let thisurl="admin/DesignPartImages/"+designname+"/"+colorname+"/"+cy+"/"+subcategory+"/"+targetvalue+".svg";
@@ -5376,69 +5411,69 @@ function dropit(parttype){
    let spindlecolor=spliturl[3];
 									     //alert(spcolor);
 
-                       if(spindlecolor=="Dark Mahogany"){
-                         spindlecolor="DarkMahogany"; 
-                       }else if(spindlecolor=="Dark Grey"){
-                        spindlecolor="DarkGrey";
-                      }else if(spindlecolor=="Light Grey"){
-                        spindlecolor="LightGrey";
-                      }else{}
+                      if(spindlecolor=="Dark Mahogany"){
+                       spindlecolor="DarkMahogany"; 
+                     }else if(spindlecolor=="Dark Grey"){
+                      spindlecolor="DarkGrey";
+                    }else if(spindlecolor=="Light Grey"){
+                      spindlecolor="LightGrey";
+                    }else{}
 
 
-                      let spindlesshadow2="Stairs with Landing/"+spindlecategory+"/SHADOW2 "+spindlecolor+".svg";
-                      let path22=encodeURI(spindlesshadow2);
-                      $("#upper_newel_shadow2").load(path22, function(response, status, xhr){
+                    let spindlesshadow2="Stairs with Landing/"+spindlecategory+"/SHADOW2 "+spindlecolor+".svg";
+                    let path22=encodeURI(spindlesshadow2);
+                    $("#upper_newel_shadow2").load(path22, function(response, status, xhr){
 
-                        if(status=="error"){
-                          $.ambiance({
-                            message:"Sorry! You cannot place this part here.",
-                            type:"error",
-                            fade:true
-                          })
-                        }else{
-                          document.getElementById("upper_newel_shadow2").setAttribute('data-url', spindlesshadow2);
-                        }
-                      });
+                      if(status=="error"){
+                        $.ambiance({
+                          message:"Sorry! You cannot place this part here.",
+                          type:"error",
+                          fade:true
+                        })
+                      }else{
+                        document.getElementById("upper_newel_shadow2").setAttribute('data-url', spindlesshadow2);
+                      }
+                    });
 
 
-                    }
+                  }
 
-                  }else if (typename=="HANDRAILFOOTRAIL" && designid=="3") {
-                    var postcolor=designmaterialname;
-                    let  svgurlu="";
-                    if (cy=="FOOTRAIL") {
-                     let droptarget="footrail";
-                     let targetvalue="FOOTRAIL";
-                     let thisurl="admin/DesignPartImages/"+designname+"/"+colorname+"/"+cy+"/"+subcategory+"/"+targetvalue+".svg";
-                     let svgurluf=thisurl;
+                }else if (typename=="HANDRAILFOOTRAIL" && designid=="3") {
+                  var postcolor=designmaterialname;
+                  let  svgurlu="";
+                  if (cy=="FOOTRAIL") {
+                   let droptarget="footrail";
+                   let targetvalue="FOOTRAIL";
+                   let thisurl="admin/DesignPartImages/"+designname+"/"+colorname+"/"+cy+"/"+subcategory+"/"+targetvalue+".svg";
+                   let svgurluf=thisurl;
 
-                     let path=encodeURI(thisurl);
+                   let path=encodeURI(thisurl);
 
-                     try {
-                      $("#"+droptarget).load(path, function(response, status, xhr){
+                   try {
+                    $("#"+droptarget).load(path, function(response, status, xhr){
 
-                        if(status=="error"){
-                          $.ambiance({
-                            message:"Sorry! You cannot place this newel post here.",
-                            type:"error",
-                            fade:true
-                          })
-                        }else{
-                          document.getElementById(droptarget).setAttribute('data-designcode', designcode);
-                          document.getElementById(droptarget).setAttribute('data-color', colorname);
-                          document.getElementById(droptarget).setAttribute('data-url', thisurl);
+                      if(status=="error"){
+                        $.ambiance({
+                          message:"Sorry! You cannot place this newel post here.",
+                          type:"error",
+                          fade:true
+                        })
+                      }else{
+                        document.getElementById(droptarget).setAttribute('data-designcode', designcode);
+                        document.getElementById(droptarget).setAttribute('data-color', colorname);
+                        document.getElementById(droptarget).setAttribute('data-url', thisurl);
 
-                        }
-                      });
-                    } catch (error) {
-                      $.ambiance({
-                        message:"Sorry! You cannot place this newel post here.",
-                        type:"error",
-                        fade:true
-                      })
-                    }
+                      }
+                    });
+                  } catch (error) {
+                    $.ambiance({
+                      message:"Sorry! You cannot place this newel post here.",
+                      type:"error",
+                      fade:true
+                    })
+                  }
 
-                    if(svgurluf){
+                  if(svgurluf){
 								//  alert(svgurlu);
                let spliturl=svgurluf.split("/");
                let spindlecategory=spliturl[4];
@@ -5462,9 +5497,9 @@ function dropit(parttype){
                 colorname="Sienna";
               }
 									 // alert(temp1);
-                  let spindlesshadow="Stairs with Triangles/"+spindlecategory+"/SHADOW "+temp1+".svg";
-                  let path2=encodeURI(spindlesshadow);
-                  $("#footrail_shadow").load(path2, function(response, status, xhr){
+                   let spindlesshadow="Stairs with Triangles/"+spindlecategory+"/SHADOW "+temp1+".svg";
+                   let path2=encodeURI(spindlesshadow);
+                   $("#footrail_shadow").load(path2, function(response, status, xhr){
 
                     if(status=="error"){
                       $.ambiance({
@@ -5479,8 +5514,8 @@ function dropit(parttype){
 
 
 
-                }
-              }else if (cy=='WOOD HANDRAIL STRAIGHT FRONT') {
+                 }
+               }else if (cy=='WOOD HANDRAIL STRAIGHT FRONT') {
                 let droptarget="handrailfront";
                 let targetvalue="STRAIGHT HANDRAIL";
                 let thisurl="admin/DesignPartImages/"+designname+"/"+colorname+"/"+cy+"/"+subcategory+"/"+targetvalue+".svg";
@@ -5583,9 +5618,9 @@ function dropit(parttype){
 									     //alert(spcolor);
 
 
-                      let spindlesshadow2="Stairs with Triangles/"+spindlecategory+"/SHADOW2 "+spcolor+".svg";
-                      let path22=encodeURI(spindlesshadow2);
-                      $("#upper_newel_shadow2").load(path22, function(response, status, xhr){
+                       let spindlesshadow2="Stairs with Triangles/"+spindlecategory+"/SHADOW2 "+spcolor+".svg";
+                       let path22=encodeURI(spindlesshadow2);
+                       $("#upper_newel_shadow2").load(path22, function(response, status, xhr){
 
                         if(status=="error"){
                           $.ambiance({
@@ -5599,9 +5634,9 @@ function dropit(parttype){
                       });
 
 
-                    }
+                     }
 
-                  }else if (typename=="HANDRAIL" && designid=="4") {
+                   }else if (typename=="HANDRAIL" && designid=="4") {
                     var postcolor=designmaterialname;
                     if (cy=='STRAIGHT HANDRAIL') {
                       let droptarget="handrailfront";
@@ -5817,122 +5852,122 @@ function dropit(parttype){
          let spliturl=svgurl.split("/");
          let makeNewurl='';
 									 //  alert(spliturl[4]);
-                   for (let index = 0; index < spliturl.length; index++) {
-                     if (index==3) {
-                      makeNewurl+=colorname+"/";
-                    }else if (index==spliturl.length-1) {
-                      makeNewurl+=spliturl[index];
-                    }else{
-                      makeNewurl+=spliturl[index]+"/";
-                    }
-
+                  for (let index = 0; index < spliturl.length; index++) {
+                   if (index==3) {
+                    makeNewurl+=colorname+"/";
+                  }else if (index==spliturl.length-1) {
+                    makeNewurl+=spliturl[index];
+                  }else{
+                    makeNewurl+=spliturl[index]+"/";
                   }
-                  let path=encodeURI(makeNewurl);
-                  $("#"+spindleid).load(path, function(response, status, xhr){
-
-                    if(status=="error"){
-                      $.ambiance({
-                        message:"Sorry! You cannot place this part here.",
-                        type:"error",
-                        fade:true
-                      })
-                    }else{
-                      document.getElementById(spindleid).setAttribute('data-url', makeNewurl);
-                    }
-                  });
-
-                  let spindlecategory=spliturl[4];
-                  let spindlesshadow="Stairs with Triangles/"+spindlecategory+"/SHADOW "+colorname+".svg";
-                  let path2=encodeURI(spindlesshadow);
-                  $("#spindle_shadow").load(path2, function(response, status, xhr){
-
-                    if(status=="error"){
-                      $.ambiance({
-                        message:"Sorry! You cannot place this part here.",
-                        type:"error",
-                        fade:true
-                      })
-                    }else{
-                      document.getElementById("spindle_shadow").setAttribute('data-url', spindlesshadow);
-                    }
-                  });
 
                 }
+                let path=encodeURI(makeNewurl);
+                $("#"+spindleid).load(path, function(response, status, xhr){
+
+                  if(status=="error"){
+                    $.ambiance({
+                      message:"Sorry! You cannot place this part here.",
+                      type:"error",
+                      fade:true
+                    })
+                  }else{
+                    document.getElementById(spindleid).setAttribute('data-url', makeNewurl);
+                  }
+                });
+
+                let spindlecategory=spliturl[4];
+                let spindlesshadow="Stairs with Triangles/"+spindlecategory+"/SHADOW "+colorname+".svg";
+                let path2=encodeURI(spindlesshadow);
+                $("#spindle_shadow").load(path2, function(response, status, xhr){
+
+                  if(status=="error"){
+                    $.ambiance({
+                      message:"Sorry! You cannot place this part here.",
+                      type:"error",
+                      fade:true
+                    })
+                  }else{
+                    document.getElementById("spindle_shadow").setAttribute('data-url', spindlesshadow);
+                  }
+                });
 
               }
-            }else if (typename=="SPINDLE" && designid=='4') {
-             let totalspindle='21';
-             for (let i = 1; i <=totalspindle ; i++) {
-              let spindleid="spindle"+i;
-              let svgurl=document.getElementById(spindleid).getAttribute("data-url");
-              if (svgurl) {
-               let spliturl=svgurl.split("/");
-               let makeNewurl='';
-               for (let index = 0; index < spliturl.length; index++) {
-                 if (index==3) {
-                  makeNewurl+=colorname+"/";
-                }else if (index==spliturl.length-1) {
-                  makeNewurl+=spliturl[index];
-                }else{
-                  makeNewurl+=spliturl[index]+"/";
-                }
 
+            }
+          }else if (typename=="SPINDLE" && designid=='4') {
+           let totalspindle='21';
+           for (let i = 1; i <=totalspindle ; i++) {
+            let spindleid="spindle"+i;
+            let svgurl=document.getElementById(spindleid).getAttribute("data-url");
+            if (svgurl) {
+             let spliturl=svgurl.split("/");
+             let makeNewurl='';
+             for (let index = 0; index < spliturl.length; index++) {
+               if (index==3) {
+                makeNewurl+=colorname+"/";
+              }else if (index==spliturl.length-1) {
+                makeNewurl+=spliturl[index];
+              }else{
+                makeNewurl+=spliturl[index]+"/";
               }
-              let path=encodeURI(makeNewurl);
-              $("#"+spindleid).load(path, function(response, status, xhr){
-
-                if(status=="error"){
-                  $.ambiance({
-                    message:"Sorry! You cannot place this part here.",
-                    type:"error",
-                    fade:true
-                  })
-                }else{
-                  document.getElementById(spindleid).setAttribute('data-url', makeNewurl);
-                }
-              });
 
             }
+            let path=encodeURI(makeNewurl);
+            $("#"+spindleid).load(path, function(response, status, xhr){
+
+              if(status=="error"){
+                $.ambiance({
+                  message:"Sorry! You cannot place this part here.",
+                  type:"error",
+                  fade:true
+                })
+              }else{
+                document.getElementById(spindleid).setAttribute('data-url', makeNewurl);
+              }
+            });
 
           }
-
-        }else if (typename=="SPINDLE" && designid=='5') {
-         let totalspindle='31';
-         for (let i = 1; i <=totalspindle ; i++) {
-          let spindleid="spindle"+i;
-          let svgurl=document.getElementById(spindleid).getAttribute("data-url");
-          if (svgurl) {
-           let spliturl=svgurl.split("/");
-           let makeNewurl='';
-           for (let index = 0; index < spliturl.length; index++) {
-             if (index==3) {
-              makeNewurl+=colorname+"/";
-            }else if (index==spliturl.length-1) {
-              makeNewurl+=spliturl[index];
-            }else{
-              makeNewurl+=spliturl[index]+"/";
-            }
-
-          }
-          let path=encodeURI(makeNewurl);
-          $("#"+spindleid).load(path, function(response, status, xhr){
-
-            if(status=="error"){
-              $.ambiance({
-                message:"Sorry! You cannot place this part here.",
-                type:"error",
-                fade:true
-              })
-            }else{
-              document.getElementById(spindleid).setAttribute('data-url', makeNewurl);
-            }
-          });
 
         }
 
+      }else if (typename=="SPINDLE" && designid=='5') {
+       let totalspindle='31';
+       for (let i = 1; i <=totalspindle ; i++) {
+        let spindleid="spindle"+i;
+        let svgurl=document.getElementById(spindleid).getAttribute("data-url");
+        if (svgurl) {
+         let spliturl=svgurl.split("/");
+         let makeNewurl='';
+         for (let index = 0; index < spliturl.length; index++) {
+           if (index==3) {
+            makeNewurl+=colorname+"/";
+          }else if (index==spliturl.length-1) {
+            makeNewurl+=spliturl[index];
+          }else{
+            makeNewurl+=spliturl[index]+"/";
+          }
+
+        }
+        let path=encodeURI(makeNewurl);
+        $("#"+spindleid).load(path, function(response, status, xhr){
+
+          if(status=="error"){
+            $.ambiance({
+              message:"Sorry! You cannot place this part here.",
+              type:"error",
+              fade:true
+            })
+          }else{
+            document.getElementById(spindleid).setAttribute('data-url', makeNewurl);
+          }
+        });
+
       }
 
-    }else{}
+    }
+
+  }else{}
 
                               // .......drop on all selected parts...........
                               let getactiveParts=document.getElementById("maindiv").querySelectorAll('.activepart_highlight');
@@ -6150,31 +6185,31 @@ $(".firststepv").click(function(){
 
  }else if(pehlastep=='2' && bg=='4'){
 		 //round step
-    firststep_treadurl="Curved Stairs/TREADS/TREADS FIRST STEP ROUND/FIRST STEP ROUND "+firststeptreadcolor+".svg";
+     firststep_treadurl="Curved Stairs/TREADS/TREADS FIRST STEP ROUND/FIRST STEP ROUND "+firststeptreadcolor+".svg";
 
 
-    if(firststeprisercolor=="Marble"){
-     firststep_riserurl="Curved Stairs/RISERS/RISER FIRST STEP ROUND/RISER FIRST STEP ROUND.svg";
-   }else {
-     firststep_riserurl="Curved Stairs/RISERS/RISER FIRST STEP ROUND/RISER FIRST STEP ROUND "+firststeprisercolor+".svg";
+     if(firststeprisercolor=="Marble"){
+       firststep_riserurl="Curved Stairs/RISERS/RISER FIRST STEP ROUND/RISER FIRST STEP ROUND.svg";
+     }else {
+       firststep_riserurl="Curved Stairs/RISERS/RISER FIRST STEP ROUND/RISER FIRST STEP ROUND "+firststeprisercolor+".svg";
+     }
+     firststep_dotsurl="Curved Stairs/dots.svg";
+     firststep_ractanglessurl="Curved Stairs/rectangles.svg";
    }
-   firststep_dotsurl="Curved Stairs/dots.svg";
-   firststep_ractanglessurl="Curved Stairs/rectangles.svg";
- }
- let cpath1="";
- let cpath2="";
- let cpath3="";
- let cpaths="";
- let cpath4="";
- let cpath5="";
- let cpath6="";
- cpath1=encodeURI(firststepurl);
- cpath2=encodeURI(firststep_treadurl);
- cpath3=encodeURI(firststep_shadowurl);
- cpaths=encodeURI(firststep_shadow2url);
- cpath4=encodeURI(firststep_riserurl);
- cpath5=encodeURI(firststep_dotsurl);
- cpath6=encodeURI(firststep_ractanglessurl);
+   let cpath1="";
+   let cpath2="";
+   let cpath3="";
+   let cpaths="";
+   let cpath4="";
+   let cpath5="";
+   let cpath6="";
+   cpath1=encodeURI(firststepurl);
+   cpath2=encodeURI(firststep_treadurl);
+   cpath3=encodeURI(firststep_shadowurl);
+   cpaths=encodeURI(firststep_shadow2url);
+   cpath4=encodeURI(firststep_riserurl);
+   cpath5=encodeURI(firststep_dotsurl);
+   cpath6=encodeURI(firststep_ractanglessurl);
 	//   loadRectangles();
 	
   if(firststepurl !=""){
@@ -6276,15 +6311,15 @@ $(".firststepv").click(function(){
   $('#designmaterial').css('display', 'none');
     	       // alert($("#catdropdown").val());
 
-            balustradeid=designtypeid;
-            var bgid=choosedesign;
-            $('.dynamicparts').html("");
-            $('.dynamicparts').attr('data-color', '');
-            $('.dynamicparts').attr('data-designcode', '');
-            $('.dynamicparts').attr('data-url', '');
+             balustradeid=designtypeid;
+             var bgid=choosedesign;
+             $('.dynamicparts').html("");
+             $('.dynamicparts').attr('data-color', '');
+             $('.dynamicparts').attr('data-designcode', '');
+             $('.dynamicparts').attr('data-url', '');
 
 
-            setTimeout(() => {
+             setTimeout(() => {
               document.getElementById("page_loader").style.display="none";
               document.getElementById("design_body").style.removeProperty('position');
 
@@ -6293,16 +6328,16 @@ $(".firststepv").click(function(){
 
             }, 6000);
 
-            if(balustradeid=='1'){
-             $('#designmaterialtext').html('Select Stair Parts...');
-             $('#designmaterialvalues').html('<li class="nav-item"> <a class="nav-link designmaterial" value="h1" href="#">Handrails</a></li><li class="nav-item"> <a class="nav-link designmaterial" value="n1" href="#">Newel Posts</a></li><li class="nav-item"> <a class="nav-link designmaterial" value="is1" href="#">Iron Spindles</a></li><li class="nav-item"> <a class="nav-link designmaterial" value="ws1" href="#">Wood Spindles</a></li>');
-             $('#designmaterial').css('display', 'block');
-           }else if(balustradeid=='2'){
-             $('#designmaterialtext').html('Select Accent Material...');
-             $('#designmaterialvalues').html('<li class="nav-item"> <a class="nav-link designmaterial" value="w2" href="#">Hardwood</a></li><li class="nav-item"> <a class="nav-link designmaterial" value="ss2" href="#">Stainless Steel</a></li>');
-             $('#designmaterial').css('display', 'block');
-           }
-         });
+             if(balustradeid=='1'){
+               $('#designmaterialtext').html('Select Stair Parts...');
+               $('#designmaterialvalues').html('<li class="nav-item"> <a class="nav-link designmaterial" value="h1" href="#">Handrails</a></li><li class="nav-item"> <a class="nav-link designmaterial" value="n1" href="#">Newel Posts</a></li><li class="nav-item"> <a class="nav-link designmaterial" value="is1" href="#">Iron Spindles</a></li><li class="nav-item"> <a class="nav-link designmaterial" value="ws1" href="#">Wood Spindles</a></li>');
+               $('#designmaterial').css('display', 'block');
+             }else if(balustradeid=='2'){
+               $('#designmaterialtext').html('Select Accent Material...');
+               $('#designmaterialvalues').html('<li class="nav-item"> <a class="nav-link designmaterial" value="w2" href="#">Hardwood</a></li><li class="nav-item"> <a class="nav-link designmaterial" value="ss2" href="#">Stainless Steel</a></li>');
+               $('#designmaterial').css('display', 'block');
+             }
+           });
 
 window.onresize=loadRectangles;
 
@@ -6550,15 +6585,15 @@ function loadRectangles(){
       //designurl='designs/stairs_with_triangles.php';
       $('#firststep').css('display', 'block');
 	 //firststepvalue="2";
-   $('#headsforwhite').css('display', 'block');
-   $('#designtypeddvalues').html('<li class="nav-item"> <a class="nav-link designtypedd" value="1" href="#">Spindle Design options</a></li><li class="nav-item"> <a class="nav-link designtypedd" value="2" href="#">Glass Design Options</a></li>');
- }else if (bgid=='4') {
+  $('#headsforwhite').css('display', 'block');
+  $('#designtypeddvalues').html('<li class="nav-item"> <a class="nav-link designtypedd" value="1" href="#">Spindle Design options</a></li><li class="nav-item"> <a class="nav-link designtypedd" value="2" href="#">Glass Design Options</a></li>');
+}else if (bgid=='4') {
      // designurl='designs/curved_stairs.php';
      $('#firststep').css('display', 'block');
 	 //firststepvalue="2";
-   $('#headsforwhite').css('display', 'block');
-   $('#designtypeddvalues').html('<li class="nav-item"> <a class="nav-link designtypedd" value="1" href="#">Spindle Design options</a></li>');
- }else if (bgid=='5') {
+  $('#headsforwhite').css('display', 'block');
+  $('#designtypeddvalues').html('<li class="nav-item"> <a class="nav-link designtypedd" value="1" href="#">Spindle Design options</a></li>');
+}else if (bgid=='5') {
      // designurl='designs/balcony.php';
      $('#firststep').css('display', 'none');
      $('#treads').css('display', 'none');
@@ -6698,15 +6733,15 @@ function loadRectangles(){
       //designurl='designs/stairs_with_triangles.php';
       $('#firststep').css('display', 'block');
 	 //firststepvalue="2";
-   $('#headsforwhite').css('display', 'block');
-   $('#designtypeddvalues').html('<li class="nav-item"> <a class="nav-link designtypedd" value="1" href="#">Spindle Design options</a></li><li class="nav-item"> <a class="nav-link designtypedd" value="2" href="#">Glass Design Options</a></li>');
- }else if (bgid=='4') {
+  $('#headsforwhite').css('display', 'block');
+  $('#designtypeddvalues').html('<li class="nav-item"> <a class="nav-link designtypedd" value="1" href="#">Spindle Design options</a></li><li class="nav-item"> <a class="nav-link designtypedd" value="2" href="#">Glass Design Options</a></li>');
+}else if (bgid=='4') {
      // designurl='designs/curved_stairs.php';
      $('#firststep').css('display', 'block');
 	 //firststepvalue="2";
-   $('#headsforwhite').css('display', 'block');
-   $('#designtypeddvalues').html('<li class="nav-item"> <a class="nav-link designtypedd" value="1" href="#">Spindle Design options</a></li>');
- }else if (bgid=='5') {
+  $('#headsforwhite').css('display', 'block');
+  $('#designtypeddvalues').html('<li class="nav-item"> <a class="nav-link designtypedd" value="1" href="#">Spindle Design options</a></li>');
+}else if (bgid=='5') {
      // designurl='designs/balcony.php';
      $('#firststep').css('display', 'none');
      $('#treads').css('display', 'none');
@@ -6798,7 +6833,7 @@ function loadRectangles(){
 
       for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function() {
-          this.classList.toggle("active");
+          this.classList.toggle("accordionActive");
           var panel = this.nextElementSibling;
           if (panel.style.display === "block") {
             panel.style.display = "none";
@@ -6820,6 +6855,82 @@ function loadRectangles(){
           axis: "y"
         });
       });
+
+
+
+function copyToClipboard(text) {
+    //var dummy = document.createElement("input");
+    // to avoid breaking orgain page when copying more words
+    // cant copy when adding below this code
+    // dummy.style.display = 'none'
+    //document.body.appendChild(dummy);
+    //Be careful if you use texarea. setAttribute('value', value), which works with "input" does not work with "textarea". – Eduard
+    //dummy.value = text;
+    //dummy.select();
+    //document.execCommand("copy");
+    //document.body.removeChild(dummy);
+    navigator.clipboard.writeText(text);
+  }
+
+      var fulllink="";
+  $(document).on('click', '.sharer', function(e) {
+
+        // Add other DIV
+       // $(this).append('<div class="other">XYZ</div>');
+       var url = window.location.href;
+       url = url.substring(0, url.lastIndexOf("/") + 1);
+       var shid= $(this).attr('id');
+        console.log(shid);
+       shid= shid.match(/\d+/g);
+  //   alert('getid here  '+shid);
+ fulllink=url+"index.php?user_design="+shid;
+
+ console.log(fulllink);
+     // fulllink="https://arfaweb.com/";
+    $('#tx').val(fulllink);
+  })
+  .on('click', 'a#fb', function(e) {
+        //$(this).remove();
+        window.open('https://www.facebook.com/sharer/sharer.php?u='+fulllink, '_blank').focus();
+    //alert("here link");
+    e.stopPropagation();
+  })
+  .on('click', 'a#tr', function(e) {
+        //$(this).remove();
+        window.open('https://twitter.com/share?url='+fulllink, '_blank').focus();
+//alert("here link");
+e.stopPropagation();
+})
+  .on('click', 'a#ln', function(e) {
+        //$(this).remove();
+        window.open('https://www.linkedin.com/share?url='+fulllink, '_blank').focus();
+    //alert("here link");
+    e.stopPropagation();
+  })
+  .on('click', 'a#insta', function(e) {
+        //$(this).remove();
+        window.open('https://www.instagram.com/sharer?u='+fulllink, '_blank').focus();
+    //alert("here link");
+    e.stopPropagation();
+  })
+  .on('click', 'a#cpy', function(e) {
+    
+   copyToClipboard(fulllink);
+   alert(fulllink);
+   e.stopPropagation();
+ })
+  .on('click', 'a#mal', function(e) {
+        //$(this).remove();
+        window.open('mailto:?subject='+fulllink, '_blank').focus();
+    //alert("here link");
+    e.stopPropagation();
+  })
+  .on('click', 'a#whtapp', function(e) {
+        //$(this).remove();
+        window.open('https://api.whatsapp.com/send?text='+fulllink, '_blank').focus();
+    //alert("here link");
+    e.stopPropagation();
+  });
     </script>
 
     <!---Added by Kamal End -->

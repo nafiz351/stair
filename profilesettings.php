@@ -16,6 +16,7 @@ if(isset($_POST['update_profile']) )
   {
     
    $_SESSION['username']=$name;
+   $_SESSION['avatar']=$avatar;
    echo "<script>alert('Your info has been updated'); window.location = 'recomendeddesign.php';</script>";
    
  }
@@ -65,7 +66,7 @@ if(isset($_POST['update_profile']) )
   <!-- Layout styles -->
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="assets/images/logo/logo-gray-mini.png" />
+  <link rel="shortcut icon" href="assets/images/logo/favicon.ico" />
   <style>
    input{
     color:white !important;
@@ -94,6 +95,11 @@ if(isset($_POST['update_profile']) )
     -webkit-filter: none;
     -moz-filter: none;
     filter: none;
+    border: 3px solid red;
+    background-color: #FFFFFF;
+    width: 56px;
+    height: 56px;
+    border-radius:50%;
   }
   .drinkcard-cc{
     cursor:pointer;
@@ -104,9 +110,9 @@ if(isset($_POST['update_profile']) )
     -webkit-transition: all 100ms ease-in;
     -moz-transition: all 100ms ease-in;
     transition: all 100ms ease-in;
-    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+    /*-webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
     -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
-    filter: brightness(1.8) grayscale(1) opacity(.7);
+    filter: brightness(1.8) grayscale(1) opacity(.7);*/
   }
   .drinkcard-cc:hover{
     -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
@@ -153,13 +159,13 @@ if(isset($_POST['update_profile']) )
                     <div class="cc-selector">
 
                       <?php 
-                      for ($avatarImageCount = 1; $avatarImageCount <= 26; $avatarImageCount++) {
+                      for ($avatarImageCount = 1; $avatarImageCount <= 22; $avatarImageCount++) {
                         ?>
                         <input 
                         <?php echo $row['avatar'] == 'face'.$avatarImageCount ? 'checked' : '' ?>
-                        id="face<?php echo $avatarImageCount; ?>" type="radio" name="avatar" value="face<?php echo $avatarImageCount; ?>" />
-                        <label class="drinkcard-cc face<?php echo $avatarImageCount; ?>" for="face<?php echo $avatarImageCount; ?>">
-                          <img class="faceImg form-control p_input" src="assets/images/faces/face<?php echo $avatarImageCount; ?>.jpg"/></label>
+                        id="<?php echo $avatarImageCount; ?>" type="radio" name="avatar" value="<?php echo $avatarImageCount; ?>" />
+                        <label class="drinkcard-cc face<?php echo $avatarImageCount; ?>" for="<?php echo $avatarImageCount; ?>">
+                          <img style="padding:0rem" class="faceImg form-control p_input" src="assets/images/avatar/<?php echo $avatarImageCount; ?>.png"/></label>
                           <?php 
                         }
                         

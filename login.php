@@ -16,6 +16,7 @@ if($num>0)
 {
 $extra="recomendeddesign.php";
 $_SESSION['login']=$_POST['uemail'];
+$_SESSION['avatar']=$num['avatar'];
 $_SESSION['id']=$num['id'];
 $_SESSION['username']=$num['name'];
 $uip=$_SERVER['REMOTE_ADDR'];
@@ -61,7 +62,7 @@ exit();
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="assets/images/logo/logo-gray-mini.png" />
+   <link rel="shortcut icon" href="assets/images/logo/favicon.ico" />
 	<style>
 	input{
 		color:white !important;

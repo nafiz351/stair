@@ -29,7 +29,7 @@ error_reporting(0);
   <!-- Layout styles -->
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="assets/images/logo/logo-gray-mini.png" />
+  <link rel="shortcut icon" href="assets/images/logo/favicon.ico" />
   <style>
     .loaddiv{
      background-color:rgba(0,0,0,1);height:100%;width:100%;position:fixed;z-index:999999;
@@ -78,41 +78,59 @@ error_reporting(0);
           <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" id="menbtn" data-toggle="minimize">
+          <!--<button class="navbar-toggler navbar-toggler align-self-center" type="button" id="menbtn" data-toggle="minimize">
             <span class="mdi mdi-menu"></span>
-          </button>
-          <ul class="navbar-nav navbar-nav-right">
+          </button> -->
+          <ul class="navbar-nav navbar-nav-right">           
             
-            <li class="nav-item dropdown border-left">
-              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="mdi mdi-web"></i>
+            <li class="nav-item dropdown">
+              <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+                <div class="navbar-profile">
+                  
+                  <?php if(strlen($_SESSION['login']))
+                  {
+
+                    if(strlen($_SESSION['avatar']))
+                    {   
+                      ?> 
+                      <img class="img-xs rounded-circle" src="assets/images/avatar/<?php echo htmlentities($_SESSION['avatar']);?>.png" alt="">
+                    <?php } ?>
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo htmlentities($_SESSION['username']);?></p>
+                  <?php } ?>
+                  <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+                </div>
               </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <h6 class="p-3 mb-0">Browse Pages</h6>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
+               <?php if(strlen($_SESSION['login']))
+               { ?>
+                <h6 class="p-3 mb-0" data-bs-toggle="modal" data-bs-target="#settings" >Profile</h6>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item" href="index.php" style="background-color:rgba(0,0,0,0);" id="rdes" >
+                <a class="dropdown-item preview-item" href="recomendeddesign.php"  id="rdes" >
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-web text-success"></i>
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject mb-1">Design Tool</p>
-                    <p class="text-muted ellipsis mb-0">Create a new Design</p>
+                    <p class="preview-subject mb-1">Recommended Designs</p>
+                    <p class="text-muted ellipsis mb-0">Recommended by Admin</p>
                   </div>
                 </a>
+                
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item"  href="recomendeddesign.php" id="cdes"  >
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item"  href="customerDesigns.php" id="cdes"  >
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-web text-danger"></i>
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject mb-1">Recommended Designs</p>
-                    <p class="text-muted ellipsis mb-0">Recommended by Admin </p>
+                    <p class="preview-subject mb-1">Customer Designs</p>
+                    <p class="text-muted ellipsis mb-0">Saved by other users </p>
                   </div>
                 </a>
+                
                 <?php if(strlen($_SESSION['login']))
                 {   ?>
                   <div class="dropdown-divider"></div>
@@ -129,31 +147,13 @@ error_reporting(0);
                   </a>
                 <?php } ?>
                 <div class="dropdown-divider"></div>
-                <p class="p-3 mb-0 text-center">StairsSteps Designs</p>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
-                <div class="navbar-profile">
-                  <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
-                  <?php if(strlen($_SESSION['login']))
-                  {   ?>
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo htmlentities($_SESSION['username']);?></p>
-                  <?php } ?>
-                  <i class="mdi mdi-menu-down d-none d-sm-block"></i>
-                </div>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-               <?php if(strlen($_SESSION['login']))
-               { ?>
-                <h6 class="p-3 mb-0" data-bs-toggle="modal" data-bs-target="#settings" >Profile</h6>
-                <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item"  href="profilesettings.php">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-settings text-success"></i>
                     </div>
                   </div>
+                  
                   <div class="preview-item-content">
                     <p class="preview-subject mb-1" >Settings</p>
                   </div>
@@ -342,8 +342,8 @@ error_reporting(0);
 	//   alert('getid here  '+shid);
  fulllink=url+"/index.php?user_design="+shid;
 	   // fulllink="https://arfaweb.com/";
-     $('#tx').val(fulllink);
-   })
+    $('#tx').val(fulllink);
+  })
   .on('click', 'a#fb', function(e) {
         //$(this).remove();
         window.open('https://www.facebook.com/sharer/sharer.php?u='+fulllink, '_blank').focus();
@@ -395,7 +395,7 @@ e.stopPropagation();
    
 //$('#hul li').on('click', function() {  
   $('#hul li.active').removeClass('active');
-  $('#rdes').addClass('active');    
+  $('#cdes').addClass('active');    
 	//alert($('#rdes').text());
 //});
 

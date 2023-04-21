@@ -6,15 +6,12 @@ require_once 'includes/config.php';
           <a class="sidebar-brand brand-logo" href="index.php"><img src="assets/images/logo/logo-gray.png" alt="logo" /></a>
           <a class="sidebar-brand brand-logo-mini" href="index.php"><img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" /></a>
         </div>
-        <ul class="nav">
-          <li class="nav-item profile">
-              <a class="nav-link" href="#">
-              <!--<span class="menu-icon">
-               <img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" />
-              </span>-->
-              <span class="menu-title"><img src="assets/images/logo/logo-gray.png" style="max-width:130px; max-height:30px;" alt="logo" /></span>
-            </a>
-          </li>
+
+      <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top" style="margin-top: 50px; pointer-events: none;" >
+        <a class="sidebar-brand brand-logo" href="#"><img src="admin/images/logo-toolinside.png" alt="logo" /></a>
+      </div>
+
+        <ul class="nav" style="margin-top: 50px;">
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
