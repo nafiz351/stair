@@ -20,17 +20,74 @@ error_reporting(0);
   <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
   <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+  <!--<link rel="stylesheet" href="assets/vendors/select2-bootstrap-theme/bootstrap.css">-->
   <link rel="stylesheet" type="text/css" href="dist/ambiance.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <!-- endinject -->
   <!-- Layout styles -->
-  <link rel="stylesheet" href="assets/css/style.css">
+ 
+ <link rel="stylesheet" href="assets/css/style.css">
   <!-- End layout styles -->
   <link rel="shortcut icon" href="assets/images/logo/favicon.ico" />
   <script src="html2canvas.min.js" type="text/javascript"></script> 
   <style>
     /* new Added by kamal */
+.nav:not(.sub-menu) > .nav-item:hover:not(.nav-category):not(.account-dropdown) > .nav-link {
+  background: #0f1015;
+  color: #ffffff;
+ }
+#leftSideMenu {
+    display: none;
+    background: #0f1015; !important;
+    color: #ffffff;
+    width: 250px;
+    overflow:auto;
+}
+#rightSideMenu
+{
+    display: none;
+    background: #191c24; !important;
+    color: #ffffff;
+    width: 250px;
+    overflow:auto;
+}
+.SideButtonRotation
+{
+    transform: rotate(-90deg);
+
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    
+}
+
+
+
+    .kmlSubmenu {
+        color:#ffff !important;
+    }
+
+.akml
+{
+    color:#6c6765;
+}
+.akml:hover
+{
+    color:#fff;
+}
+.divAlwaysOnTop
+{
+    
+    clear:both;
+   
+    position:fixed;
+    top:80px;
+    left:0px;
+    z-index:1
+}
 
 
     .panel  > .nav-item:hover:not(.nav-category):not(.account-dropdown) > .nav-link {
@@ -86,7 +143,7 @@ error_reporting(0);
     }
 
     @media (max-width: 992px) { 
-      .rightSideBar
+      .rightSideBar,.HideMeOnMobile
       {
         display:none !important;
       }
@@ -470,42 +527,145 @@ error_reporting(0);
   --padding: 0.5rem -1rem; }
 
 </style>
+
 </head>
 <body id="design_body" class="" style="overflow-y: hidden;margin:0px;">
+<!--showMeOnMobile by kamal-->
+<div class="showMeOnMobile divAlwaysOnTop">
+<div class="SideButtonRotation" style="float:left;margin:150px 0 0 -120px; border:0px solid;padding:0">
+
+<button class="btn btn-dark" id="cat_icon" type="button" data-bs-toggle="offcanvas"
+data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Choose Your Staircase</button>
+
+<button class="btn btn-dark" id="rightSideMenuBar" type="button"    >Design Tools</button>
+</div><!--SideButtonRotation-->
 
 
-  <?php //include "includes/loginsignup.php" ?>
-  <?php //include "includes/settings.php" ?>
-  <div id="page_loader" style="display:none;" class="loaddiv" >
-    <center><img style="" class="gifload" src="assets/images/stairtool.gif" alt="loading" /></center>
-  </div>
-  <div class="container-scroller ">
-    <!-- partial:partials/_sidebar.html -->
-    <nav class="sidebar d-print-none sidebar-offcanvas" id="sidebar" style="">
-      <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="index.php"><img src="admin/images/logo-tool.png" alt="logo" /></a>
-        <a class="sidebar-brand brand-logo-mini" href="index.php"><img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" /></a>
-      </div>
+<div id="rightSideMenu" style="border:0px solid; float:left;margin:0px 0 0 -62px; padding-left:0">
+    <div CLASS="panel_title2" style="float:left; width:100%;background: #0f1015;"><span style="float:right; margin:0 15px 0 0; ">Close</span></div>
+    
+    hfdghfg
+    <div class="sidebar">
+    <ul class="nav" style="">
 
-      <ul class="nav" style="">    
-        
+        <li class="nav-item profile" style="position: fixed; pointer-events: none;">
+          <a class="nav-link" href="#">
+              <!--span class="menu-icon">
+               <!--img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" /->
+               </span-->
+               <span class="menu-title"><img src="admin/images/logo-toolinside.png" style="max-width:130px; max-height:30px;" alt="logo" />&nbsp;</span>
+             </a>
+           </li>
+           <!--hideOnDesktop start-->
+            <nav class="navbar navbarmag navzoom HideMeOnDesktop" style="margin-top:50px">
+          <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+            <ul class="navbar-nav navbar-nav-right">
+              <li class="nav-item dropdown border-left" style="border-left: 1px solid #191c24 !important;">
+                <a class="nav-link count-indicator dropdown-toggle" id="zoom" href="#" data-toggle="dropdown" style="padding:0 !important;margin:0 !important" >
+                  <i class="mdi mdi-magnify-minus zoom-out"></i>
+                </a>
+              </li>
+              <li class="nav-item dropdown border-left">
+                <a class="nav-link count-indicator dropdown-toggle" id="zoom" href="#" data-toggle="dropdown">
+                  <i class="mdi mdi-magnify zoom-init"></i>
+                </a>
+              </li>
+              <li class="nav-item dropdown border-left">
+                <a class="nav-link count-indicator dropdown-toggle" id="zoom" href="#" data-toggle="dropdown">
+                  <i class="mdi mdi-magnify-plus zoom"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+          <li class="nav-item  whenstairchoosed HideMeOnDesktop" style="margin-top:50px">
+            <a class="nav-link" href="#">
+              <span class="menu-icon">
+                <i class="mdi mdi-delete-sweep"></i>
+              </span>
+              <span class="menu-title"><button type="button" id="clr_btn" class="btn btn-danger btn-fw">Clear Design</button></span>
+            </a>
+          </li>
+          <li class="nav-item menu-items whenstairchoosed HideMeOnDesktop">
+            <a class="nav-link" href="#">
+              <span class="menu-icon">
+                <i class="mdi mdi-delete"></i>
+              </span>
+              <span class="menu-title"><button type="button" id="delete_part_btn" class="btn btn-danger btn-fw">Delete Selection</button></span>
+            </a>
+          </li>  <?php// if(strlen($_SESSION['login']))
+	//{   ?>
+    <li class="nav-item menu-items whenstairchoosed HideMeOnDesktop">
+      <a class="nav-link" href="#">
+        <span class="menu-icon">
+          <i class="mdi mdi-database-plus"></i>
+        </span>
+        <span class="menu-title"><button type="button" id="savedesign_btn" class="btn btn-danger btn-fw">Save Design</button></span>
+      </a>
+    </li>
+    <li class="nav-item menu-items whenstairchoosed HideMeOnDesktop">
+  <a class="nav-link" href="#">
+    <span class="menu-icon">
+      <i class="mdi mdi-printer"></i>
+    </span>
+    <span class="menu-title"><button type="button" id="printproject" class="btn btn-dark btn-fw">Print Project</button></span>
+  </a>
+</li>
+<li class="nav-item menu-items whenstairchoosed HideMeOnDesktop">
+  <a class="nav-link" href="#">
+    <span class="menu-icon">
+      <i class="mdi mdi-printer"></i>
+    </span>
+    <span class="menu-title"><button type="button" id="instalationqute" tooltip="Greater Toronto Area only"  class="btn btn-dark btn-fw">Have this Design</br> Installed </button></span>
+  </a>
+</li>
 
     <!--hideOnDesktop end-->
+
+</ul> 
+</div>
+    hfdghfg
+    <div class="panelItems">
     
+    </div><!--panelItems-->
+    
+</div>
+
+
+
+<div id="leftSideMenu">
+    <div CLASS="panel_title">
+    <span style="float:right; margin:0 15px 0 0 ">Close</span>
+
+
+    </div><!--panel_title-->
+    <!--LeftSidePanelContents by kamal Starts -->
+<nav class="sidebar" id="sidebar" style="">
+
+      <ul class="nav" style="">
+        <li class="nav-item profile" style="position: fixed; pointer-events: none;">
+          <a class="nav-link" href="#">
+              <!--span class="menu-icon">
+               <!--img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" /->
+               </span-->
+               <span class="menu-title"><img src="admin/images/logo-toolinside.png" style="max-width:130px; max-height:30px;" alt="logo" />&nbsp;</span>
+             </a>
+           </li>
            <button class="accordion firstTab" style="margin-top: 45px"><span style="color:#6c7293">Choose your Staircase</span></button>
            <div class="panel">
 
             <li class="nav-item menu-items mykml" >
-              
+
               <div class="" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
+                <ul class="nav flex-column sub-menu ">
                  <?php  $retc=mysqli_query($con,"select * from stairdesigns");
 
 
-                 while ($rowc=mysqli_fetch_array($retc)) 
+                 while ($rowc=mysqli_fetch_array($retc))
                  {
                   ?>
-                  <li class="nav-item"> <a class="nav-link choosebg" id="<?php echo $rowc['id'];?>" href="#"><?php echo $rowc['design_name'];?></a></li>
+                  <li class="nav-item"> <a class="nav-link choosebg " id="<?php echo $rowc['id'];?>" href="#"><?php echo $rowc['design_name'];?></a></li>
                   <?php
 
                 }?>
@@ -514,7 +674,7 @@ error_reporting(0);
           </li>
 
         </div>
-        
+
         <button class="accordion"><span style="color:#6c7293">Colour Sections</span></button>
         <div class="panel">
           <li class="nav-item menu-items whenstairchoosed" id="treads" >
@@ -790,8 +950,403 @@ error_reporting(0);
 
 </ul>
 </nav>
+    <!--LeftSidePanelContents by kamal ends -->
 
-    
+</div>
+
+</div><!--showMeOnMobile by kamal-->
+
+  <?php //include "includes/loginsignup.php" ?>
+  <?php //include "includes/settings.php" ?>
+  <div id="page_loader" style="display:none;" class="loaddiv" >
+    <center><img style="" class="gifload" src="assets/images/stairtool.gif" alt="loading" /></center>
+  </div>
+  <div class="container-scroller ">
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidebar d-print-none sidebar-offcanvas" id="sidebar" style="">
+      <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+        <a class="sidebar-brand brand-logo" href="index.php"><img src="admin/images/logo-tool.png" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo-mini" href="index.php"><img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" /></a>
+      </div>
+      <ul class="nav" style="">
+
+        <li class="nav-item profile" style="position: fixed; pointer-events: none;">
+          <a class="nav-link" href="#">
+              <!--span class="menu-icon">
+               <!--img src="assets/images/logo/logo-gray-mini.png" style="min-width:100%;" alt="logo" /->
+               </span-->
+               <span class="menu-title"><img src="admin/images/logo-toolinside.png" style="max-width:130px; max-height:30px;" alt="logo" />&nbsp;</span>
+             </a>
+           </li>
+            <!--hideOnDesktop start-->
+            <nav class="navbar navbarmag navzoom HideMeOnDesktop" style="margin-top:50px">
+          <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+            <ul class="navbar-nav navbar-nav-right">
+              <li class="nav-item dropdown border-left" style="border-left: 1px solid #191c24 !important;">
+                <a class="nav-link count-indicator dropdown-toggle" id="zoom" href="#" data-toggle="dropdown" style="padding:0 !important;margin:0 !important">
+                  <i class="mdi mdi-magnify-minus zoom-out"></i>
+                </a>
+              </li>
+              <li class="nav-item dropdown border-left">
+                <a class="nav-link count-indicator dropdown-toggle" id="zoom" href="#" data-toggle="dropdown">
+                  <i class="mdi mdi-magnify zoom-init"></i>
+                </a>
+              </li>
+              <li class="nav-item dropdown border-left">
+                <a class="nav-link count-indicator dropdown-toggle" id="zoom" href="#" data-toggle="dropdown">
+                  <i class="mdi mdi-magnify-plus zoom"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+          <li class="nav-item menu-items whenstairchoosed HideMeOnDesktop" style="margin-top:50px">
+            <a class="nav-link" href="#">
+              <span class="menu-icon">
+                <i class="mdi mdi-delete-sweep"></i>
+              </span>
+              <span class="menu-title"><button type="button" id="clr_btn" class="btn btn-danger btn-fw">Clear Design</button></span>
+            </a>
+          </li>
+          <li class="nav-item menu-items whenstairchoosed HideMeOnDesktop">
+            <a class="nav-link" href="#">
+              <span class="menu-icon">
+                <i class="mdi mdi-delete"></i>
+              </span>
+              <span class="menu-title"><button type="button" id="delete_part_btn" class="btn btn-danger btn-fw">Delete Selection</button></span>
+            </a>
+          </li>  <?php// if(strlen($_SESSION['login']))
+	//{   ?>
+    <li class="nav-item menu-items whenstairchoosed HideMeOnDesktop">
+      <a class="nav-link" href="#">
+        <span class="menu-icon">
+          <i class="mdi mdi-database-plus"></i>
+        </span>
+        <span class="menu-title"><button type="button" id="savedesign_btn" class="btn btn-danger btn-fw">Save Design</button></span>
+      </a>
+    </li>
+    <li class="nav-item menu-items whenstairchoosed HideMeOnDesktop">
+  <a class="nav-link" href="#">
+    <span class="menu-icon">
+      <i class="mdi mdi-printer"></i>
+    </span>
+    <span class="menu-title"><button type="button" id="printproject" class="btn btn-dark btn-fw">Print Project</button></span>
+  </a>
+</li>
+<li class="nav-item menu-items whenstairchoosed HideMeOnDesktop">
+  <a class="nav-link" href="#">
+    <span class="menu-icon">
+      <i class="mdi mdi-printer"></i>
+    </span>
+    <span class="menu-title"><button type="button" id="instalationqute" tooltip="Greater Toronto Area only"  class="btn btn-dark btn-fw">Have this Design</br> Installed </button></span>
+  </a>
+</li>
+
+    <!--hideOnDesktop end-->
+
+           <button class="accordion firstTab HideMeOnMobile" style="margin-top: 45px"><span
+           style="color:#6c7293">Choose your
+           Staircase</span></button>
+           <div class="panel HideMeOnMobile">
+
+            <li class="nav-item menu-items mykml" >
+
+              <div class="" id="ui-basic">
+                <ul class="nav flex-column sub-menu ">
+                 <?php  $retc=mysqli_query($con,"select * from stairdesigns");
+
+
+                 while ($rowc=mysqli_fetch_array($retc))
+                 {
+                  ?>
+                  <li class="nav-item"> <a class="nav-link choosebg " id="<?php echo $rowc['id'];?>" href="#"><?php echo $rowc['design_name'];?></a></li>
+                  <?php
+
+                }?>
+              </ul>
+            </div>
+          </li>
+
+        </div>
+
+        <button class="accordion HideMeOnMobile"><span style="color:#6c7293">Colour Sections</span></button>
+        <div class="panel HideMeOnMobile">
+          <li class="nav-item menu-items whenstairchoosed" id="treads" >
+            <a class="nav-link basiccolors" data-toggle="collapse" value="treads" href="#treadcolors" aria-expanded="false" aria-controls="ui-basic">
+              <span class="menu-icon">
+                <i class="mdi mdi-stairs"></i>
+              </span>
+              <span class="menu-title">Treads</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="treadcolors">
+             <div id="container1" class="shadow-lg  colorcontainer rounded" style="background-color:#D6FFEF;" >
+               <div class="box" style="background-color:#000000" value="#000000" data-color="Black" title="Black"></div>
+               <div class="box" style="background-color:#DDB28E" value="#DDB28E" data-color="Tan" title="Tan"></div>
+               <div class="box" style="background-color:#D48541" value="#D48541" data-color="Amaretto" title="Amaretto"></div>
+               <div class="box" style="background-color:#65340A" value="#65340A" data-color="Coco" title="Coco"></div>
+               <div class="box" style="background-color:#652310" value="#652310" data-color="Praline" title="Praline"></div>
+               <div class="box" style="background-color:#472203" value="#472203" data-color="Coffee" title="Coffee"></div>
+               <div class="box" style="background-color:#847055" value="#847055" data-color="Sienna" title="Sienna"></div>
+               <div class="box" style="background-color:#B7B3A9" value="#B7B3A9" data-color="LightGrey" title="LightGrey"></div>
+               <div class="box" style="background-color:#676560" value="#676560" data-color="DarkGrey" title="DarkGrey"></div>
+               <div class="box" style="background-color:#6F1E14" value="#6F1E14" data-color="DarkMahogany" title="DarkMahogany"></div>
+               <div class="box" style="background-color:#815438" value="#815438" data-color="dark" title="dark"></div>
+               <div class="box" style="background-color:#B48463" value="#B48463" data-color="medium" title="medium"></div>
+               <div class="box" style="background-color:#caa472" value="#caa472" data-color="light" title="light"></div>
+             </div>
+           </div>
+         </li>
+         <li class="nav-item menu-items whenstairchoosed" id="risers">
+          <a class="nav-link basiccolors" value="risers" data-toggle="collapse" href="#riserscolors" aria-expanded="false" aria-controls="ui-basic">
+            <span class="menu-icon">
+              <i class="mdi mdi-stairs"></i>
+            </span>
+            <span class="menu-title">Risers</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="riserscolors">
+           <div id="container2" class="shadow-lg  colorcontainer rounded" style="background-color:#D6FFEF;">
+             <div class="box" style="background-color:#000000" value="#000000" data-color="Black" title="Black"></div>
+             <div class="box" style="background-color:#DDB28E" value="#DDB28E" data-color="Tan" title="Tan"></div>
+             <div class="box" style="background-color:#D48541" value="#D48541" data-color="Amaretto" title="Amaretto"></div>
+             <div class="box" style="background-color:#65340A" value="#65340A" data-color="Coco" title="Coco"></div>
+             <div class="box" style="background-color:#652310" value="#652310" data-color="Praline" title="Praline"></div>
+             <div class="box" style="background-color:#472203" value="#472203" data-color="Coffee" title="Coffee"></div>
+             <div class="box" style="background-color:#847055" value="#847055" data-color="Sienna" title="Sienna"></div>
+             <div class="box" style="background-color:#B7B3A9" value="#B7B3A9" data-color="LightGrey" title="LightGrey"></div>
+             <div class="box" style="background-color:#676560" value="#676560" data-color="DarkGrey" title="DarkGrey"></div>
+             <div class="box" style="background-color:#6F1E14" value="#6F1E14" data-color="DarkMahogany" title="DarkMahogany"></div>
+             <div class="box" style="background-color:#fff" value="#fff" data-color="white" title="white"></div>
+             <div class="box" style="background-color:#EAE5D9;font-size:11px;color:black;" value="#EAE5D9" data-color="Marble" title="Marble">TILE</div>
+           </div>
+         </div>
+       </li>
+       <li class="nav-item menu-items whenstairchoosed" id="stringers">
+        <a class="nav-link basiccolors" value="stringers" data-toggle="collapse" href="#stringerscolors" aria-expanded="false" aria-controls="ui-basic">
+          <span class="menu-icon">
+            <i class="mdi mdi-stairs"></i>
+          </span>
+          <span class="menu-title">Stringers</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="stringerscolors">
+         <div id="container3" class="shadow-lg  colorcontainer rounded" style="background-color:#D6FFEF;">
+           <div class="box" style="background-color:#000000" value="#000000" data-color="Black" title="Black"></div>
+           <div class="box" style="background-color:#DDB28E" value="#DDB28E" data-color="Tan" title="Tan"></div>
+           <div class="box" style="background-color:#D48541" value="#D48541" data-color="Amaretto" title="Amaretto"></div>
+           <div class="box" style="background-color:#65340A" value="#65340A" data-color="Coco" title="Coco"></div>
+           <div class="box" style="background-color:#652310" value="#652310" data-color="Praline" title="Praline"></div>
+           <div class="box" style="background-color:#472203" value="#472203" data-color="Coffee" title="Coffee"></div>
+           <div class="box" style="background-color:#847055" value="#847055" data-color="Sienna" title="Sienna"></div>
+           <div class="box" style="background-color:#B7B3A9" value="#B7B3A9" data-color="LightGrey" title="LightGrey"></div>
+           <div class="box" style="background-color:#676560" value="#676560" data-color="DarkGrey" title="DarkGrey"></div>
+           <div class="box" style="background-color:#6F1E14" value="#6F1E14" data-color="DarkMahogany" title="DarkMahogany"></div>
+           <div class="box" style="background-color:#fff" value="#fff" data-color="white" title="white"></div>
+           <div class="box" style="background-color:#EAE5D9;font-size:11px;color:black;" value="#EAE5D9" data-color="Marble" title="Marble">TILE</div>
+         </div>
+       </div>
+     </li>
+     <li class="nav-item menu-items whenstairchoosed">
+      <a class="nav-link basiccolors" value="walls"  data-toggle="collapse" href="#wallscolors" aria-expanded="false" aria-controls="ui-basic">
+        <span class="menu-icon">
+          <i class="mdi mdi-file-word-box"></i>
+        </span>
+        <span class="menu-title">Walls</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="wallscolors">
+       <div id="container4" class="shadow-lg  colorcontainer rounded" style="background-color:#CACFD2;">
+         <div class="box" style="background-color:#F0F9DC" value="#F0F9DC" data-color="LightGreen" title="LightGreen"></div>
+         <div class="box" style="background-color:#FFFFFF" value="#FFFFFF" data-color="White" title="White"></div>
+         <div class="box" style="background-color:#FAF2D4" value="#FAF2D4" data-color="Beige" title="Beige"></div>
+         <div class="box" style="background-color:#EAC7AA" value="#EAC7AA" data-color="Tan" title="Tan"></div>
+         <div class="box" style="background-color:#FFFFD5" value="#FFFFD5" data-color="LightYellow" title="LightYellow"></div>
+         <div class="box" style="background-color:#C74535" value="#C74535" data-color="LightMahogany" title="LightMahogany"></div>
+         <div class="box" style="background-color:#B7B3A9" value="#B7B3A9" data-color="LightGrey" title="LightGrey"></div>
+         <div class="box" style="background-color:#676560" value="#676560" data-color="DarkGrey" title="DarkGrey"></div>
+         <div class="box" style="background-color:#E4E3E1" value="#E4E3E1" data-color="orignal" title="orignal"></div>
+       </div>
+     </div>
+   </li>
+   <li class="nav-item menu-items whenstairchoosed">
+    <a class="nav-link basiccolors" value="floor" data-toggle="collapse" href="#floorscolors" aria-expanded="false" aria-controls="ui-basic">
+      <span class="menu-icon">
+        <i class="mdi mdi-checkbox-blank"></i>
+      </span>
+      <span class="menu-title">Floor</span>
+      <i class="menu-arrow"></i>
+    </a>
+    <div class="collapse" id="floorscolors">
+     <div id="container5" class="shadow-lg  colorcontainer rounded" style="background-color:#D6FFEF;">
+       <div class="box" style="background-color:#000000" value="#000000" data-color="Black" title="Black"></div>
+       <div class="box" style="background-color:#DDB28E" value="#DDB28E" data-color="Tan" title="Tan"></div>
+       <div class="box" style="background-color:#D48541" value="#D48541" data-color="Amaretto" title="Amaretto"></div>
+       <div class="box" style="background-color:#65340A" value="#65340A" data-color="Coco" title="Coco"></div>
+       <div class="box" style="background-color:#652310" value="#652310" data-color="Praline" title="Praline"></div>
+       <div class="box" style="background-color:#472203" value="#472203" data-color="Coffee" title="Coffee"></div>
+       <div class="box" style="background-color:#847055" value="#847055" data-color="Sienna" title="Sienna"></div>
+       <div class="box" style="background-color:#B7B3A9" value="#B7B3A9" data-color="LightGrey" title="LightGrey"></div>
+       <div class="box" style="background-color:#676560" value="#676560" data-color="DarkGrey" title="DarkGrey"></div>
+       <div class="box" style="background-color:#6F1E14" value="#6F1E14" data-color="DarkMahogany" title="DarkMahogany"></div>
+       <div class="box" style="background-color:#EAE5D9;font-size:11px;color:black;" value="#EAE5D9" id="tilefloor" data-color="Marble" title="Marble">TILE</div>
+       <div class="box" style="background-color:#815438" value="#815438" data-color="dark" title="dark"></div>
+       <div class="box" style="background-color:#B48463" value="#B48463" data-color="medium" title="medium"></div>
+       <div class="box" style="background-color:#caa472" value="#caa472" data-color="light" title="light"></div>
+     </div>
+   </div>
+ </li>
+ <li class="nav-item menu-items whenstairchoosed" id="firststep">
+  <a class="nav-link firststepvbtn" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic">
+    <span class="menu-icon">
+      <i class="mdi mdi-crop-landscape"></i>
+    </span>
+    <span class="menu-title">First Step</span>
+    <i class="menu-arrow"></i>
+  </a>
+  <div class="collapse" id="ui-basic1">
+    <ul class="nav flex-column sub-menu">
+      <li class="nav-item"> <a class="nav-link firststepv" value="1" href="#">First Squre Step</a></li>
+      <li class="nav-item"> <a class="nav-link firststepv" value="2"  href="#">First Round Step</a></li>
+    </ul>
+  </div>
+</li>
+</div>
+
+<button class="accordion HideMeOnMobile"><span style="color:#6c7293">Parts Sections</span></button>
+<div class="panel HideMeOnMobile">
+
+  <li class="nav-item menu-items whenstairchoosed" id="mybalu">
+    <a class="nav-link designtypeddbtn" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic" style="">
+      <span class="menu-icon">
+        <i class="mdi mdi-laptop"></i>
+      </span>
+      <span class="menu-title ">Choose your Balustrade</span>
+      <i class="menu-arrow"></i>
+    </a>
+    <div class="collapse" id="ui-basic2">
+      <ul class="nav flex-column sub-menu " id="designtypeddvalues" >
+        <li class="nav-item"> <a class="nav-link designtypedd" value="1" href="#">Spindle Design options</a></li>
+        <li class="nav-item"> <a class="nav-link designtypedd" value="2" href="#">Glass Design Options</a></li>
+      </ul>
+    </div>
+  </li>
+  <li class="nav-item menu-items whenstairchoosed" id="designmaterial">
+    <a class="nav-link designmaterialbtn" data-toggle="collapse" href="#ui-basic3" aria-expanded="false" aria-controls="ui-basic">
+      <span class="menu-icon">
+        <i class="mdi mdi-laptop"></i>
+      </span>
+      <span class="menu-title" id="designmaterialtext" >Select Stair Parts...</span>
+      <i class="menu-arrow"></i>
+    </a>
+    <div class="collapse" id="ui-basic3">
+      <ul class="nav flex-column sub-menu" id="designmaterialvalues">
+      </ul>
+    </div>
+  </li>
+  <li class="nav-item menu-items whenstairchoosed" id="designcolor">
+    <a class="nav-link designcolorbtn" data-toggle="collapse" href="#ui-basic4" aria-expanded="false" aria-controls="ui-basic">
+      <span class="menu-icon">
+        <i class="mdi mdi-laptop"></i>
+      </span>
+      <span class="menu-title designcolortext">Select Colour</span>
+      <i class="menu-arrow"></i>
+    </a>
+    <div class="collapse" id="ui-basic4">
+     <div id="designcolorvalues" class="shadow-lg  colorcontainer designcolorvalues rounded" style="background-color:#D6FFEF;">
+     </div>
+
+   </div>
+ </li>
+ <li class="nav-item menu-items whenstairchoosed" id="designcategory">
+  <a class="nav-link designcategorybtn" data-toggle="collapse" href="#ui-basic5" aria-expanded="false" aria-controls="ui-basic">
+    <span class="menu-icon">
+      <i class="mdi mdi-laptop"></i>
+    </span>
+    <span class="menu-title">Select Profile</span>
+    <i class="menu-arrow"></i>
+  </a>
+  <div class="collapse" id="ui-basic5">
+    <ul id="designcategoryvalues" class="nav flex-column sub-menu">
+    </ul>
+  </div>
+</li>
+<li class="nav-item menu-items whenstairchoosed" id="designsubcategory">
+  <a class="nav-link designsubcategorybtn" data-toggle="collapse" href="#ui-basic6" aria-expanded="false" aria-controls="ui-basic">
+    <span class="menu-icon">
+      <i class="mdi mdi-laptop"></i>
+    </span>
+    <span class="menu-title" id="designsubcategorytext" > Selections</span>
+    <i class="menu-arrow"></i>
+  </a>
+  <div class="collapse" id="ui-basic6">
+    <ul id="designsubcategoryvalues" class="nav flex-column sub-menu">
+    </ul>
+
+  </div>
+
+</li>
+<li class="nav-item menu-items whenstairchoosed">
+  <a class="nav-link "  data-toggle="collapse" id="imgdrag" href="#img" aria-expanded="false" aria-controls="ui-basic">
+    <span class="menu-icon">
+      <i class="mdi mdi-stairs"></i>
+    </span>
+    <span class="menu-title" id="designsubcategorytext1" >Dragable Image</span>
+  </a>
+  <div class="collapse" id="img">
+    <div  class="mb-3 d-flex justify-content-center align-items-center" style="background:white; overflow: hidden; height: 200px;width:200px;margin-left:22px;" id="partsimagediv" >
+     <div id="draggeddiv" class="dragpart ui-widget-content" style="height:200px; " ><!--img   style="height:200px;" src="Straight Stairs/II SPINDLE WOOD/SPINDLE WOOD 1A PLAIN OAK/1.png "/--></div>
+   </div> <div>
+    <input type="hidden" id="savedtype">
+  </div>
+</div>
+</li>
+
+<li class="nav-item menu-items whenstairchoosed">
+  <a class="nav-link "  data-toggle="collapse" id="picked_tab" href="#img1" aria-expanded="false" aria-controls="ui-basic">
+    <span class="menu-icon">
+      <i class="mdi mdi-stairs"></i>
+    </span>
+    <span class="menu-title" id="designsubcategorytext1" >Picked Parts</span>
+  </a>
+  <div class="collapse" id="img1">
+
+    <div id="partdetail" style="color:black;background:white; overflow: hidden; height: 200px;width:200px;margin-left:22px;" ><h5>This is picked tab. Here used parts will be shown</h5></div>
+  </div>
+</li>
+<li class="nav-item menu-items whenstairchoosed" id="headsforwhite">
+  <a class="nav-link basiccolors" data-toggle="collapse" value="headsforwhite" href="#headsforwhitecolors" aria-expanded="false" aria-controls="ui-basic">
+    <span class="menu-icon">
+      <i class="mdi mdi-stairs"></i>
+    </span>
+    <span class="menu-title">White Posts Heads</span>
+    <i class="menu-arrow"></i>
+  </a>
+  <div class="collapse" id="headsforwhitecolors">
+   <div id="container1" class="shadow-lg  colorcontainer rounded" style="background-color:#D6FFEF;" >
+     <div class="box" style="background-color:#000000" value="#000000" data-color="Black" title="Black"></div>
+     <div class="box" style="background-color:#DDB28E" value="#DDB28E" data-color="Tan" title="Tan"></div>
+     <div class="box" style="background-color:#D48541" value="#D48541" data-color="Amaretto" title="Amaretto"></div>
+     <div class="box" style="background-color:#65340A" value="#65340A" data-color="Coco" title="Coco"></div>
+     <div class="box" style="background-color:#652310" value="#652310" data-color="Praline" title="Praline"></div>
+     <div class="box" style="background-color:#472203" value="#472203" data-color="Coffee" title="Coffee"></div>
+     <div class="box" style="background-color:#847055" value="#847055" data-color="Sienna" title="Sienna"></div>
+     <div class="box" style="background-color:#B7B3A9" value="#B7B3A9" data-color="Light Grey" title="LightGrey"></div>
+     <div class="box" style="background-color:#676560" value="#676560" data-color="Dark Grey" title="DarkGrey"></div>
+     <div class="box" style="background-color:#6F1E14" value="#6F1E14" data-color="Dark Mahogany" title="DarkMahogany"></div>
+     <div class="box" style="background-color:#ffff" value="#ffff" data-color="White" title="White"></div>
+     <div class="box" style="background-color:#caa472" value="#caa472" data-color="Oak" title="Oak"></div>
+   </div>
+ </div>
+</li>
+
+</div>
+
+</ul>
+</nav>
+
+
 <!-- partial -->
 <div class="container-fluid page-body-wrapper " style="">
   <!-- partial:partials/_navbar.html -->
@@ -804,16 +1359,16 @@ error_reporting(0);
         <span class="mdi mdi-menu"></span>
       </button>
       <ul class="navbar-nav navbar-nav-right">
-        
+
         <li class="nav-item dropdown">
           <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
             <div class="navbar-profile">
-              
+
               <?php if(strlen($_SESSION['login']))
               {   ?>
-          
+
             <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
-            
+
                 <p class="mb-0 d-none d-sm-block navbar-profile-name"><?php echo htmlentities($_SESSION['username']);?></p>
                 <i class="mdi mdi-menu-down d-none d-sm-block"></i>
               <?php } else { ?>
@@ -823,10 +1378,10 @@ error_reporting(0);
                 <p class="preview-subject mb-1">Login/Signup</p>
               </div>
             </a>
-              
-              
+
+
               <?php } ?>
-              
+
             </div>
           </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
@@ -847,7 +1402,7 @@ error_reporting(0);
                 <p class="text-muted ellipsis mb-0">Recommended by Admin</p>
               </div>
             </a>
-            
+
              <div class="dropdown-divider"></div>
              <div class="dropdown-divider"></div>
             <a class="dropdown-item preview-item"  href="customerDesigns.php" id="cdes"  >
@@ -861,7 +1416,7 @@ error_reporting(0);
                 <p class="text-muted ellipsis mb-0">Saved by other users </p>
               </div>
             </a>
-            
+
             <?php if(strlen($_SESSION['login']))
             {   ?>
               <div class="dropdown-divider"></div>
@@ -878,7 +1433,7 @@ error_reporting(0);
               </a>
             <?php } ?>
             <div class="dropdown-divider"></div>
-            <p class="p-3 mb-0 text-center">StairsSteps Designs</p> 
+            <p class="p-3 mb-0 text-center">StairsSteps Designs</p>
              <div class="dropdown-divider"></div>
             <a class="dropdown-item preview-item"  href="profilesettings.php">
               <div class="preview-thumbnail">
@@ -886,13 +1441,13 @@ error_reporting(0);
                   <i class="mdi mdi-settings text-success"></i>
                 </div>
               </div>
-              
+
               <div class="preview-item-content">
-              
+
               <p class="preview-subject mb-1" >Settings</p>
               </div>
             </a>
-            
+
             <div class="dropdown-divider"></div>
             <a class="dropdown-item preview-item" href="includes/logout.php">
               <div class="preview-thumbnail">
@@ -907,14 +1462,16 @@ error_reporting(0);
           <?php } else 	  if(strlen($_SESSION['login'])==0)
           { ?>
             <div class="dropdown-divider"></div>
-            
+
           <?php } ?>
         </div>
       </li>
     </ul>
-    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+    <!-- hamburger menu by kamal-->
+    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas" style="display:none;">
       <span class="mdi mdi-format-line-spacing"></span>
     </button>
+    <!-- hamburger menu by kamal-->
   </div>
 </nav>
 
@@ -933,10 +1490,10 @@ error_reporting(0);
                   <div class="card-body">
           <div  class="mb-3 d-flex justify-content-center align-items-center" style="background:white; overflow: hidden; height: 200px;width:200px;margin-left:22px;" id="partsimagediv1" >
                            <div id="draggeddiv1" class="dragpart ui-widget-content" style="height:200px; " ><img   style="height:200px;" src="Straight Stairs/II SPINDLE WOOD/SPINDLE WOOD 1A PLAIN OAK/1.png "/-></div>
-                        </div> 
+                        </div>
                   </div>
                 </div>
-              </div--> 
+              </div-->
               <div class="col-12 " id="pccol">
                 <div class="card" style="opacity:0;" >
                   <div id="designcardbody" style="" class=" card-body">
@@ -947,7 +1504,7 @@ error_reporting(0);
 
 
                     </main>
-                  </div> 
+                  </div>
                 </div>
               </div>
             </div>
@@ -955,7 +1512,7 @@ error_reporting(0);
           <div id="previewImg" style="display:none;" ></div>
         </div>
         <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->        
+        <!-- partial:partials/_footer.html -->
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -1022,7 +1579,7 @@ error_reporting(0);
         <span class="menu-title"><button type="button" id="savedesign_btn" class="btn btn-danger btn-fw">Save Design</button></span>
       </a>
     </li>
-    
+
           <!--li class="nav-item menu-items whenstairchoosed">
             <a class="nav-link" href="#">
               <span class="menu-icon">
@@ -1032,7 +1589,7 @@ error_reporting(0);
             </a>
           </li-->
           <?php //} ?>
-          
+
 
 
           <li class="nav-item menu-items whenstairchoosed">
@@ -3061,7 +3618,7 @@ $(".choosebg").on('click', function(){
     loadRectangles();
         //  $(".round").hide();
 
-      }, 6000);
+      }, 0);
  });
 
  $('#designbase').css('display', 'block'); 
@@ -6781,6 +7338,40 @@ function loadRectangles(){
     </script>
 
     <!---Added by Kamal Start -->
+<script>
+$('#rightSideMenuBar,.panel_title2').click(function () {
+    if($('#rightSideMenuBar').is(':visible')){
+    $('#rightSideMenuBar').fadeOut(function () {
+        $('#rightSideMenu').toggle('slide', {
+            direction: 'left'
+        }, 1000);
+    });
+    }
+    else{
+        $('#rightSideMenu').toggle('slide', {
+            direction: 'left'
+        }, 1000, function(){ $('#rightSideMenuBar').fadeIn();});
+    }
+});
+
+
+
+
+$('#cat_icon,.panel_title').click(function () {
+    if($('#cat_icon').is(':visible')){
+    $('#cat_icon').fadeOut(function () {
+        $('#leftSideMenu').toggle('slide', {
+            direction: 'left'
+        }, 1000);
+    });
+    }
+    else{
+        $('#leftSideMenu').toggle('slide', {
+            direction: 'left'
+        }, 1000, function(){ $('#cat_icon').fadeIn();});
+    }
+});
+</script>
     <script>
       var acc = document.getElementsByClassName("accordion");
       var i;

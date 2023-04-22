@@ -162,7 +162,7 @@ if(isset($_POST['update_profile']) )
                       for ($avatarImageCount = 1; $avatarImageCount <= 22; $avatarImageCount++) {
                         ?>
                         <input 
-                        <?php echo $row['avatar'] == 'face'.$avatarImageCount ? 'checked' : '' ?>
+                        <?php echo $row['avatar'] == $avatarImageCount ? 'checked' : '' ?>
                         id="<?php echo $avatarImageCount; ?>" type="radio" name="avatar" value="<?php echo $avatarImageCount; ?>" />
                         <label class="drinkcard-cc face<?php echo $avatarImageCount; ?>" for="<?php echo $avatarImageCount; ?>">
                           <img style="padding:0rem" class="faceImg form-control p_input" src="assets/images/avatar/<?php echo $avatarImageCount; ?>.png"/></label>
