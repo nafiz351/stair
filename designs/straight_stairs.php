@@ -1,6 +1,6 @@
           
   
-            <div id="stair" class="gridpart" data-color="" data-designcode="" data-url="Straight Stairs/BASE ETC/STAI1R 1 STRAIGHT.svg"><?php include "../Straight Stairs/BASE ETC/STAI1R 1 STRAIGHT.svg"; ?></div>
+            <div id="stair" class="gridpart" data-color="" data-designcode="" data-url="Straight Stairs/BASE ETC/STAI1R 1 STRAIGHT.svg"><?php include "../Straight Stairs/BASE ETC/STAI1R 1 STRAIGHT2.svg"; ?></div>
             <div id="wallpaper_lower_triangle" class="gridpart" data-color="" data-designcode="" data-url="Straight Stairs/BASE ETC/WALLPAPER LOWER TRIANGLE.svg"><?php include "../Straight Stairs/BASE ETC/WALLPAPER LOWER TRIANGLE.svg"; ?></div>
             <div id="wallpaper" class="gridpart" data-color="" data-designcode="" data-url="Straight Stairs/BASE ETC/WALLPAPER.svg"><?php include "../Straight Stairs/BASE ETC/WALLPAPER.svg"; ?></div>
             <div id="skirting_grains" class="gridpart" data-color="" data-designcode="" data-url="Straight Stairs/BASE ETC/SKIRTING PLAIN.svg"><?php include "../Straight Stairs/BASE ETC/SKIRTING PLAIN.svg"; ?></div>

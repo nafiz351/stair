@@ -133,7 +133,7 @@ if(isset($_POST['update_profile']) )
       <div class="row w-100 m-0">
         <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
           <div class="card col-lg-4 mx-auto">
-            <div class="card-body px-5 py-5">
+            <div class="card-body px-5 py-5" style="background-color: #212529;">
               <h3 class="card-title text-left mb-3">Profile Settings</h3>
               <?php
               $query=mysqli_query($con,"select * from users where id='".$_SESSION['id']."'");
@@ -174,7 +174,7 @@ if(isset($_POST['update_profile']) )
                     </div>
                     <div class="form-group d-flex align-items-center justify-content-between">
                       
-                      <a href="changepassword.php" class="forgot-pass">Change password</a>
+                      <a href="changepassword.php" class="forgot-pass" style="color: #fff;">Change password</a>
                     </div>
                     <div class="text-center">
                       <button type="submit"   name="update_profile"  class="btn btn-primary btn-block enter-btn">Update</button>
